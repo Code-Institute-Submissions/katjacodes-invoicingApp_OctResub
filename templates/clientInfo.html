@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Information</title>
+</head>
+<body>
+    {% for clientInfo in clientInfo %}
+        {{ clientInfo.client_name }}<br>
+        {{ clientInfo.client_position }}<br>
+        {{ clientInfo.client_organization }}<br>
+        {{ clientInfo.client_email }}<br>
+    {% endfor %}
+</body>
+</html>
