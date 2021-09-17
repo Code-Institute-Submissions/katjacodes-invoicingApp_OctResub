@@ -1,3 +1,5 @@
+credit: code taken from https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching
+
 click==8.0.1
 dnspython==2.1.0
 Flask==2.0.1

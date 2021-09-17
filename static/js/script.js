@@ -1,5 +1,5 @@
 
-/* credit: code for navbar taken from https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/96d22c817aff4ce39e336fcb96c30e16/?child=first */
+/* credit: code taken from https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching*/
 
 /*
     jQuery for MaterializeCSS initialization

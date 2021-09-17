@@ -1,4 +1,4 @@
-# credit: code taken from https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/579bbf01edaf47938e6a860b8f08f275/?child=first and edited to fit project needs
+# credit: code taken from https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching and edited to fit project needs
 
 import os
 from flask import (
@@ -6,6 +6,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -25,6 +26,11 @@ mongo = PyMongo(app)
 def get_clientInfo():
     clientInfo = mongo.db.clientInfo.find()
     return render_template("clientInfo.html", clientInfo=clientInfo)
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 
 if __name__ == "__main__":
