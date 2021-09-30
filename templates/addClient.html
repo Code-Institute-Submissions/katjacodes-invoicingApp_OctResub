@@ -5,28 +5,37 @@
 
     <h3 class="light-blue-text text-darken-4 center-align">Add Client</h3>
 
-    <div class="row">
+    <div class="row card-panel grey lighten-5" >
         <form class="col s12" method="POST" action="">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-circle prefix light-blue-text text-darken-4"></i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Name</label>
+                    <input id="client_name" minlength="5" maxlength="50" 
+                        type="text" class="validate" required>
+                    <label for="client_name">Name</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="fas fa-briefcase prefix light-blue-text text-darken-4"></i>
-                    <input id="icon_briefcase" type="tel" class="validate">
-                    <label for="icon_briefcase">Position</label>
+                    <input id="client_name" minlength="5" maxlength="50" 
+                        type="text" class="validate" required>
+                    <label for="client_position">Position</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="fas fa-building prefix light-blue-text text-darken-4"></i>
-                    <input id="icon_building" type="text" class="validate">
-                    <label for="icon_building">Organization</label>
+                    <input id="client_name" minlength="4" maxlength="50" 
+                        type="text" class="validate" required>
+                    <label for="iclient_organization">Organization</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="fas fa-at prefix light-blue-text text-darken-4"></i>
-                    <input id="icon_at" type="tel" class="validate">
-                    <label for="icon_at">Email</label>
+                    <input id="client_name" minlength="5" maxlength="50" 
+                        type="text" class="validate" required>
+                    <label for="client_email">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="fas fa-dollar-sign prefix light-blue-text text-darken-4"></i>
+                    <input id="category_name" type="tel" class="validate">
+                    <label for="category_name">Rate</label>
                 </div>
             </div>
         </form>
