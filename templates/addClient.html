@@ -14,29 +14,42 @@
                         type="text" class="validate" required>
                     <label for="client_name">Name</label>
                 </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-briefcase prefix light-blue-text text-darken-4"></i>
                     <input id="client_name" minlength="5" maxlength="50" 
                         type="text" class="validate" required>
                     <label for="client_position">Position</label>
                 </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-building prefix light-blue-text text-darken-4"></i>
                     <input id="client_name" minlength="4" maxlength="50" 
                         type="text" class="validate" required>
                     <label for="iclient_organization">Organization</label>
                 </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-at prefix light-blue-text text-darken-4"></i>
                     <input id="client_name" minlength="5" maxlength="50" 
                         type="text" class="validate" required>
                     <label for="client_email">Email</label>
                 </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-dollar-sign prefix light-blue-text text-darken-4"></i>
-                    <input id="category_name" type="tel" class="validate">
-                    <label for="category_name">Rate</label>
-                </div>
+                    <select id="category_name" name="category name" class="validate" required>
+                        <option value="" disabled selected>Choose rate</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="category-name">Rate</label>
+                </div>  
             </div>
         </form>
     </div>

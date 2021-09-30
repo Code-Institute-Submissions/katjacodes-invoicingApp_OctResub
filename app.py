@@ -97,7 +97,8 @@ def logout():
 
 @app.route("/add_client")
 def add_client():
-    return render_template("addClient.html")
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("addClient.html", categories=categories)
 
 
 if __name__ == "__main__":
