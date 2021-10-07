@@ -1,0 +1,22 @@
+<!--- credit: code taken from https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching and edited to fit project needs -->
+
+{% extends "base.html" %}
+{% block content %}
+
+    INVOICE
+    <body onload="myFunction()"></body>
+    <p id="demo"></p>
+
+    
+<!--- credit: code taken from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring and edited to fit project needs -->
+<script>
+    function myFunction() {
+        const options = {year: 'numeric', month: 'long', day: 'numeric' };
+        var d = new Date();
+        var n = d.toLocaleDateString('en-US', options);
+        document.getElementById("demo").innerHTML = n;
+}
+</script>
+
+{% endblock %}
+        

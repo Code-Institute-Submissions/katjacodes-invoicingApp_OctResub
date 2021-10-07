@@ -14,17 +14,24 @@
         {{ clientInfo.client_email }}<br>
     {% endfor %}
 
-
-
-<!--- credit: code taken from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring and edited to fit project needs -->
-<script>
-    function myFunction() {
-        const options = {year: 'numeric', month: 'long', day: 'numeric' };
-        var d = new Date();
-        var n = d.toLocaleDateString('en-US', options);
-        document.getElementById("demo").innerHTML = n;
-}
-</script>
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header white-text light-blue darken-4 text-shadow"><i class="fas fa-caret-down"></i>First</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header white-text light-blue darken-4 text-shadow"><i class="fas fa-caret-down"></i>Second</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header white-text light-blue darken-4 text-shadow"><i class="fas fa-caret-down"></i>Third</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header white-text light-blue darken-4 text-shadow"><i class="fas fa-caret-down"></i>Fourth</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+    </ul>
 
 {% endblock %}
         
