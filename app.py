@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_clientInfo")
 def get_clientInfo():
-    clientInfo = mongo.db.clientInfo.find()
+    clientInfo = list(mongo.db.clientInfo.find())
     return render_template("clientInfo.html", clientInfo=clientInfo)
 
 
