@@ -25,7 +25,7 @@ mongo = PyMongo(app)
 @app.route("/get_clientInfo")
 def get_clientInfo():
     clientInfo = list(mongo.db.clientInfo.find())
-    return render_template("clientInfo.html", clientInfo=clientInfo)
+    return render_template("login.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -113,9 +113,10 @@ def edit_clientInfo(clientInfo_id):
     return render_template("editClient.html", clientInfo=clientInfo, categories=categories)
 
 
-@app.route("/invoice")
+@app.route("/invoice", methods=["GET", "POST"])
 def invoice():
-    return render_template("invoice.html")
+    clientInfo = mongo.db.clientInfo.find().sort("client_organization", 1)
+    return render_template("invoice.html", clientInfo=clientInfo)
 
 
 if __name__ == "__main__":
