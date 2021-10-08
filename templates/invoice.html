@@ -3,9 +3,35 @@
 {% extends "base.html" %}
 {% block content %}
 
-    INVOICE
-    <body onload="myFunction()"></body>
-    <p id="demo"></p>
+    <body onload="myFunction()">
+
+        <p id="demo"></p>
+    
+        <h3 class="amber-text text-accent-3 center-align">Invoice</h3>
+
+        <div class="row card-panel grey lighten-5" >
+            <form class="col s12" action="{{ url_for('invoice') }}">
+                <!-- client selection -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="client_organization" name="client_organization" class="validate" required>
+                            <option value="" disabled selected>Choose client</option>
+                            {% for clientInfo in clientInfo %}
+                                <option value="{{ clientInfo.client_organization }}">{{ clientInfo.client_organization }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="client_organization">Rate</label>
+                    </div>  
+                </div>
+            </form>
+        </div>
+
+    
+
+
+    
+    </body>
+   
 
     
 <!--- credit: code taken from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring and edited to fit project needs -->

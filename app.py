@@ -113,6 +113,11 @@ def edit_clientInfo(clientInfo_id):
     return render_template("editClient.html", clientInfo=clientInfo, categories=categories)
 
 
+@app.route("/invoice")
+def invoice():
+    return render_template("invoice.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

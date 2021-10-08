@@ -28,7 +28,7 @@
                     {% if session.user %}
                         <li><a href="{{ url_for('get_clientInfo') }}">Manage Clients</a></li>
                         <li><a href="{{ url_for('add_client') }}">Add Client</a></li>
-                        <li><a href="#">New Invoice</a></li>
+                        <li><a href="{{ url_for('invoice') }}">New Invoice</a></li>
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
