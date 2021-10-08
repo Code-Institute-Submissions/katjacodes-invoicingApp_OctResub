@@ -95,17 +95,10 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_client")
+@app.route("/add_client", methods=["GET", "POST"])
 def add_client():
     if request.method == "POST":
-        client_info = {
-            "client_name": request.form.get("client_name"),
-            "client_position": request.form.get("client_position"),
-            "client_organization": request.form.get("client_organization"),
-            "client_email": request.form.get("client_email"),
-            "category_name": request.form.get("category_name"),
-        }
-        mongo.db.clientInfo.insert_one(client_info)
+        mongo.db.clientInfo.insert_one(request.form.to_dict())
         flash("Client Successfully Added")
         return redirect(url_for("get_clientInfo"))
 
