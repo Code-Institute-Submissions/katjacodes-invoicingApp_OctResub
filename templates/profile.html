@@ -5,10 +5,20 @@
 
     <div class="row">
         <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <h3 class="center-align light-blue-text text-darken-4">
-                    {{ username }}'s Profile
+            <div class="card-panel cyan darken-3 text-shadow" style="margin-top: 3em;">
+                <h3 class="center-align amber-text text-accent-3 center-align">
+                    Welcome, {{ username }}!
                 </h3>
+            </div>
+        </div>
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel cyan lighten-4 text-shadow" style="margin-top: 1em;">
+                <ul class="left-align black-text left-align" style="line-height: 2;">
+                    <li style="font-weight: 700;">The Interpreter Invoicing App allows you to</li>
+                    <li>- <a href="{{ url_for('add_client') }}">Add new clients</a></li>
+                    <li>- <a href="{{ url_for('get_clientInfo') }}">Manage exiting client information</a></li>
+                    <li>- <a href="{{ url_for('invoice') }}">Create invoices</a> based on the rate information for each client</li>
+                <ul>    
             </div>
         </div>
     </div>

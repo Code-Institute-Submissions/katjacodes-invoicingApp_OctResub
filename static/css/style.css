@@ -3,18 +3,18 @@ body, html {
     margin: 0;
   }
   
-  .bg {
-    /* The image used */
-    background-image: url("../img/bookkeeping.jpg/");
+.bg {
+  /* The image used */
+  background-image: url("../img/bookkeeping.jpg/");
   
-    /* Full height */
-    height: 100%; 
+  /* Full height */
+  height: 100%; 
   
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 #username, #password { 
   border-bottom: 1px white; 
