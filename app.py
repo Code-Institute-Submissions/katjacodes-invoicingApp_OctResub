@@ -3,7 +3,7 @@
 import os
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, session, url_for, jsonify)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -115,8 +115,17 @@ def edit_clientInfo(clientInfo_id):
 @app.route("/invoice", methods=["GET", "POST"])
 def invoice():
     if request.method == "GET":
-        clientInfo = mongo.db.clientInfo.find().sort("client_organization", 1)
-        return render_template("invoice.html", clientInfo=clientInfo)
+        clientInfos = mongo.db.clientInfo.find().sort("client_organization", 1)
+        return render_template("invoice.html", clientInfos=clientInfos)
+
+@app.route("/api/invoice", methods=["GET", "POST"])
+def invoice_api():
+    if request.method == "GET":
+        clientInfos = list(mongo.db.clientInfo.find().sort("client_organization", 1))
+        for clientInfo in clientInfos:
+            clientInfo['_id'] = str( clientInfo['_id'])
+        print(clientInfos)
+        return jsonify(clientInfos)
 
 
 if __name__ == "__main__":
