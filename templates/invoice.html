@@ -56,32 +56,26 @@
 {% endblock %}
 {% block scripts %}
           <script>
-            let clientInfoList =  []
-            fetch('/api/invoice')
-             .then(res => res.json())
-             .then(list => clientInfoList = list)
-            /* credit: code taken from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring and edited to fit project needs */
-            function myFunction() {
+             /* credit: code taken from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring and edited to fit project needs */
+             function myFunction() {
                 const options = {year: 'numeric', month: 'long', day: 'numeric' };
                 var d = new Date();
                 var n = d.toLocaleDateString('en-US', options);
                 document.getElementById("demo").innerHTML = n;
             }
-            
-            /* credit: code taken from https://stackoverflow.com/questions/50628302/best-way-to-populate-form-fields-from-select-field and edited to fit project needs */
+
+            /* credit: thank you to Joshua Ugba for helping me make Python and JavaScript communicate with each other */
+            let clientInfoList =  []
+            fetch('/api/invoice')
+             .then(res => res.json())
+             .then(list => clientInfoList = list)
+
             function changeRate() {
               let email = document.getElementById('client_organization').value
               let client = clientInfoList.filter((client) => client.client_email == email)[0]
               document.getElementById('clientName').innerHTML = `<p>${client.client_name}</p>`
               document.getElementById('clientPosition').innerHTML = `<p>${client.client_position}</p>`
               document.getElementById('clientEmail').innerHTML =`<p>${client.client_email}</p>`
-            // var client_organization = document.getElementById('client_organization')
-            // var category_name = cat.options[cat.selectedIndex].getAttribute("#");
-            // if (category_name == 'None') {
-            //   size = ''
-            // }
-            // document.getElementById('#').value = size;
           }
-          //changeSizeInput()
         </script>  
 {%  endblock %} 

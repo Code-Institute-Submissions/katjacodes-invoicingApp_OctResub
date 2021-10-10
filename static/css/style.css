@@ -21,6 +21,13 @@ body, html {
   box-shadow: 0 1px 0 0 white;
 }
 
+.card-panel {
+  border-bottom: solid 1px white;
+  border-top: solid 1px white;;
+  border-right: solid 1px white;
+  border-left: solid 1px white;
+}
+
   .btn-small {
     margin: 5px;
 }

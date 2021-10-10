@@ -118,6 +118,7 @@ def invoice():
         clientInfos = mongo.db.clientInfo.find().sort("client_organization", 1)
         return render_template("invoice.html", clientInfos=clientInfos)
 
+# credit: thank you to Joshua Ugba for guiding me in understanding how to access exactly the information I needed to access.
 @app.route("/api/invoice", methods=["GET", "POST"])
 def invoice_api():
     if request.method == "GET":
