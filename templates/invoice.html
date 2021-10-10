@@ -4,45 +4,77 @@
 {% block content %}
 
     <body onload="myFunction()">
-
-        <p id="demo"></p>
     
-        <h3 class="amber-text text-accent-3 center-align">Invoice</h3>
+        <h3 class="amber-text text-accent-3 center-align" style="text-align: right;">Invoice</h3>
 
+        <h4 id="demo" style="text-align: right;"></h4>
+
+        <p>Client:</p>
         <div class="row card-panel grey lighten-5" >
             <form class="col s12" methods="POST" action="{{ url_for('invoice') }}">
                 <!-- client selection -->
                 <div class="row">
-                    <div class="input-field col s12">
-                        <select id="client_organization" name="client_organization">
+                    <form class="" action="/" method="post">
+                        <select onChange="changeRate()" id="client_organization" name="client_organization">
                             <option value="" disabled selected>Choose client</option>
                             {% for clientInfo in clientInfo %}
-                                <option value="{{ clientInfo.client_organization }}">{{ clientInfo.client_organization }}</option>
+                                <option value="{{ clientInfo.category_name }}">{{ clientInfo.client_organization }}</option>
                             {% endfor %}
                         </select>
                         <label for="client_organization">Client Organization</label>
-                    </div>  
+                    </form>  
                 </div>
             </form>
         </div>
+        <p>#client name based on client organization</p>
+        <p>#client position based on client organization</p>
+        <p>#client email based on client organization</p>
 
+        <table class="responsive-table">
+            <thead>
+              <tr>
+                  <th>
+                    <select onChange="changeRate()" id="client_organization" name="client_organization">
+                        <option value="" disabled selected>Choose client</option>
+                        {% for clientInfo in clientInfo %}
+                            <option value="{{ clientInfo.category_name }}">{{ clientInfo.client_organization }}</option>
+                        {% endfor %}
+                    </select>
+                  </th>
+                  <th></th>
+              </tr>
+            </thead>
     
-
-
-    
+            <tbody>
+              <tr>
+                <td>#rates name based on org</td>
+                <td>#number based on rate</td>
+              </tr>
+            </tbody>
+          </table>
+                
     </body>
    
 
     
-<!--- credit: code taken from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring and edited to fit project needs -->
 <script>
+    /* credit: code taken from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring and edited to fit project needs */
     function myFunction() {
         const options = {year: 'numeric', month: 'long', day: 'numeric' };
         var d = new Date();
         var n = d.toLocaleDateString('en-US', options);
         document.getElementById("demo").innerHTML = n;
-}
+    
+    /* credit: code taken from https://stackoverflow.com/questions/50628302/best-way-to-populate-form-fields-from-select-field and edited to fit project needs */
+    function changeRate() {
+    var client_organization = document.getElementById('client_organization')
+    var category_name = cat.options[cat.selectedIndex].getAttribute("size");
+    if (category_name == 'None') {
+      size = ''
+    }
+    document.getElementById('#').value = size;
+  }
+  changeSizeInput()
 </script>
 
 {% endblock %}
-        

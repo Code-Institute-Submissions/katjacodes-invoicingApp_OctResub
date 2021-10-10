@@ -115,8 +115,13 @@ def edit_clientInfo(clientInfo_id):
 
 @app.route("/invoice", methods=["GET", "POST"])
 def invoice():
-    clientInfo = mongo.db.clientInfo.find().sort("client_organization", 1)
-    return render_template("invoice.html", clientInfo=clientInfo)
+    if request.method == "GET":
+        clientInfo = mongo.db.clientInfo.find().sort("client_organization", 1)
+        clientCategory = mongo.db.clientInfo.find_one(
+            {"category_name": }
+
+
+        return render_template("invoice.html", clientInfo=clientInfo)
 
 
 if __name__ == "__main__":
