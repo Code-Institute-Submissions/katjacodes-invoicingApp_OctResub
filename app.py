@@ -25,7 +25,7 @@ mongo = PyMongo(app)
 @app.route("/get_clientInfo")
 def get_clientInfo():
     clientInfo = list(mongo.db.clientInfo.find())
-    return render_template("login.html")
+    return render_template("clientInfo.html", clientInfo=clientInfo)
 
 
 @app.route("/register", methods=["GET", "POST"])
