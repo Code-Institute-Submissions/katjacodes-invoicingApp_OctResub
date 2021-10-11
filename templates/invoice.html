@@ -3,12 +3,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div onload="myFunction()">
-    
-        <h3 class="amber-text text-accent-3 center-align" style="text-align: right;">Invoice</h3>
-
-        <h4 id="demo" style="text-align: right;"></h4>
-
+    <div>
+        <h3 class="amber-text text-accent-3 center-align" style="text-align: left;">Invoice</h3>
+        
+        <p id="demo" class="white-text" style="text-align: left;"></p>
+        <script>
+            /* credit: code taken from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring and edited to fit project needs */
+            function myFunction() {
+               const options = {year: 'numeric', month: 'long', day: 'numeric' };
+               var d = new Date();
+               var n = d.toLocaleDateString('en-US', options);
+               document.getElementById("demo").innerHTML = n;
+           }
+        </script>
+        
         <p>Client:</p>
         <div class="row card-panel grey lighten-5" >
             <form class="col s12" methods="POST" action="{{ url_for('invoice') }}">
