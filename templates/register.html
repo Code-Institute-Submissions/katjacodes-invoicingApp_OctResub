@@ -3,46 +3,47 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Register</h3>
+    <h3 class="amber-text text-accent-3 center-align">Register</h3>
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel">
+            <div class="card-panel cyan darken-3">
                 <!-- username -->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-						<input id="username" name="username" type="text" minlength="5"
+						<i class="fas fa-user-plus prefix white-text"></i>
+						<input id="username" class="white-text" name="username" type="text" minlength="5"
                             maxlength="20" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-						<label for="username">Username</label>
+						<label for="username" class="white-text">Username</label>
 					</div>
                 </div>
                 <!-- passowrd -->
                 <div class="row">
                     <div class="input-field col s12">
-						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
-                        <input id="password" name="password" type="password" minlength="14"
+						<i class="fas fa-user-lock prefix white-text"></i>
+                        <input id="password" class="white-text" name="password" type="password" minlength="14"
                             maxlength="20" pattern="^[a-zA-Z0-9]{14,20}$" class="validate" required>
-                        <label for="password">Password</label>
+                        <label for="password" class="white-text">Password</label>
                     </div>
                 </div>
                 <!-- register -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+                    <button type="submit" class="col s12 btn-large cyan lighten-4 black-text">
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <p class="center-align white-text" style="margin-top: 2em;">
+                            Already Registered?
+                            <a href="{{ url_for('login') }}" class="amber-text text-accent-3">Log In</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
 
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                Already Registered?
-                <a href="#" class="light-blue-text text-darken-4">Log In</a>
-            </p>
-        </div>
-    </div>
+    
 
 {% endblock %}
