@@ -137,7 +137,7 @@ def invoice_api():
     if request.method == "GET":
         clientInfos = list(mongo.db.clientInfo.find().sort("client_organization", 1))
         for clientInfo in clientInfos:
-            clientInfo['_id'] = str( clientInfo['_id'])
+            clientInfo['_id'] = str(clientInfo['_id'])
         print(clientInfos)
         return jsonify(clientInfos)
 
