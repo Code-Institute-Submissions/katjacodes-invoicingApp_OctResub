@@ -107,6 +107,18 @@ def add_client():
 
 @app.route("/edit_clientInfo/<clientInfo_id>", methods=["GET", "POST"])
 def edit_clientInfo(clientInfo_id):
+    if request.method == "POST":
+        submit = {
+            "client_organization": request.form.get("client_organization"),
+            "client_name": request.form.get("client_name"),
+            "client_position": request.form.get("client_position"),
+            "client_email": request.form.get("client_email"),
+            "category_name": request.form.get("category_name") 
+        }
+        mongo.db.clientInfo.update({"_id": ObjectId(clientInfo_id)}, submit)
+        flash("Client Successfully Updated")
+        return redirect(url_for("get_clientInfo"))
+
     clientInfo = mongo.db.clientInfo.find_one({"_id": ObjectId(clientInfo_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("editClient.html", clientInfo=clientInfo, categories=categories)
@@ -117,6 +129,7 @@ def invoice():
     if request.method == "GET":
         clientInfos = mongo.db.clientInfo.find().sort("client_organization", 1)
         return render_template("invoice.html", clientInfos=clientInfos)
+
 
 # credit: thank you to Joshua Ugba for guiding me in understanding how to access exactly the information I needed to access.
 @app.route("/api/invoice", methods=["GET", "POST"])
