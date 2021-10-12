@@ -3,64 +3,68 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="light-blue-text text-darken-4 center-align">Edit Client</h1>
+<h1 class="amber-text text-accent-3 center-align">Edit Client</h1>
 
-    <div class="row card-panel grey lighten-5" >
+    <div class="rrow card-panel white-text cyan darken-3 text-shadow" >
         <form class="col s12" method="POST" action="{{ url_for('edit_clientInfo', clientInfo_id=clientInfo._id) }}">
             <!-- client organization -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-building prefix light-blue-text text-darken-4"></i>
-                    <input id="client_organization" name="client_organization" minlength="4" maxlength="50" 
-                        type="text" class="validate" required>
-                    <label for="client_organization">Organization</label>
+                    <i class="fas fa-building prefix white-text"></i>
+                    <input id="client_organization" class="white-text" name="client_organization" minlength="4" maxlength="50" 
+                        value="{{ clientInfo.client_organization }}" type="text" class="validate" required>
+                    <label for="client_organization" class="white-text">Organization</label>
                 </div>
             </div>
             <!-- client name -->
             <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-circle prefix light-blue-text text-darken-4"></i>
-                    <input id="client_name" name="client_name" minlength="5" maxlength="50" 
-                        type="text" class="validate" required>
-                    <label for="client_name">Name</label>
+                <div class="input-field col s12t">
+                    <i class="fas fa-user-circle prefix white-text"></i>
+                    <input id="client_name" class="white-text" name="client_name" minlength="5" maxlength="50" 
+                    value="{{ clientInfo.client_name }}" type="text" class="validate" required>
+                    <label for="client_name" class="white-text">Name</label>
                 </div>
             </div>
             <!-- client position -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-briefcase prefix light-blue-text text-darken-4"></i>
-                    <input id="client_position" name="client_position" minlength="5" maxlength="50" 
-                        type="text" class="validate" required>
-                    <label for="client_position">Position</label>
+                    <i class="fas fa-briefcase prefix white-text"></i>
+                    <input id="client_position" class="white-text" name="client_position" minlength="5" maxlength="50" 
+                    value="{{ clientInfo.client_position }}" type="text" class="validate" required>
+                    <label for="client_position" class="white-text">Position</label>
                 </div>
             </div>
             <!-- client email address -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-at prefix light-blue-text text-darken-4"></i>
-                    <input id="client_email" name="client_email" minlength="5" maxlength="50" 
-                        type="email" class="validate" required>
-                    <label for="client_email">Email</label>
+                    <i class="fas fa-at prefix white-text"></i>
+                    <input id="client_email" class="white-text" name="client_email" minlength="5" maxlength="50" 
+                    value="{{ clientInfo.client_email }}" type="email" class="validate" required>
+                    <label for="client_email" class="white-text">Email</label>
                 </div>
             </div>
             <!-- rate selection -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-dollar-sign prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-dollar-sign prefix white-text"></i>
                     <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose rate</option>
+                        <option value="">Choose rate</option>
                         {% for category in categories %}
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endfor %}
                     </select>
-                    <label for="category_name">Rate</label>
+                    <label for="category_name" class="white-text">Rate</label>
                 </div>  
             </div>
-            <!-- submit button -->
+            
             <div class="row">
-                <div class="col s12 center-align">
-                    <button class="btn waves-effect waves-light" type="submit">Submit
-                        <i class="material-icons right">send</i>
+                <div class="col s12 m8 offset-m4 align-center">
+                    <!-- submit button -->
+                    <a class="waves-effect cyan lighten-4 black-text btn" style="margin-right: 3em;"><i class="fas fa-paper-plane black-text"></i>Submit</a>
+                    <!-- cancel button -->
+                    <!-- <button class="col s12 btn-large cyan lighten-4 black-text" type="submit">Submit
+                        <i class="fas fa-paper-plane black-text"></i> -->
+                    <a href="{{ url_for('get_clientInfo') }}" class="waves-effect amber darken-4 black-text btn"><i class="fas fa-times-circle right"></i>Cancel</a>
                     </button>
                 </div>
             </div>
