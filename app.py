@@ -97,9 +97,9 @@ def logout():
 @app.route("/add_client", methods=["GET", "POST"])
 def add_client():
     if request.method == "POST":
-            mongo.db.clientInfo.insert_one(request.form.to_dict())
-            flash("Client Successfully Added")
-            return redirect(url_for("get_clientInfo"))
+        mongo.db.clientInfo.insert_one(request.form.to_dict())
+        flash("Client Successfully Added")
+        return redirect(url_for("get_clientInfo"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("addClient.html", categories=categories)
@@ -135,7 +135,9 @@ def delete_clientInfo(clientInfo_id):
 def invoice():
     if request.method == "GET":
         clientInfos = mongo.db.clientInfo.find().sort("client_organization", 1)
-        return render_template("invoice.html", clientInfos=clientInfos)
+        if request.method == "GET":
+            rateTypes = mongo.db.rateType.find().sort("rate_type", 1)
+            return render_template("invoice.html", clientInfos=clientInfos, rateTypes=rateTypes)
 
 
 # credit: thank you to Joshua Ugba for guiding me in understanding how to access exactly the information I needed to access.

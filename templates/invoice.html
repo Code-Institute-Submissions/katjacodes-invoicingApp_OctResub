@@ -64,6 +64,44 @@
             </div>
         </div>
 
+        <div class="row card-panel amber lighten-5" >
+            <table class="responsive-table">
+                <thead>
+                  <tr>
+                      <th></th>
+                      <th></th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>
+                        <div class="input-field col s12 white=text">
+                            <select id="rate_type" name="rate_type" class="validate" method="GET" required>
+                                <option value="" disabled selected>Choose rate type</option>
+                                {% for rateType in rateTypes %}
+                                    <option value="{{ rateType.rate_type }}">{{ rateType.rate_type }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="rate_type" class="white-text">Rate Type</label>
+                        </div>  
+                    </td>
+                    <td>#</td>
+                 </tr>
+                  <tr>
+                    <td>Alan</td>
+                    <td>#</td>
+                  </tr>
+                  <tr>
+                    <td>Jonathan</td>
+                    <td>#</td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+        </div>
+
 {% endblock %}
 {% block scripts %}
           <script>
