@@ -123,6 +123,12 @@ def edit_clientInfo(clientInfo_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("editClient.html", clientInfo=clientInfo, categories=categories)
 
+@app.route("/delete_clientInfo/<clientInfo_id>")
+def delete_clientInfo(clientInfo_id):
+    mongo.db.clientInfo.remove({"_id": ObjectId(clientInfo_id)})
+    flash("Client Information Successfully Deleted")
+    return redirect(url_for("get_clientInfo"))
+
 
 @app.route("/invoice", methods=["GET", "POST"])
 def invoice():
