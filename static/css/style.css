@@ -16,6 +16,8 @@ body, html {
   background-size: cover;
 }
 
+a { color: inherit; } 
+
 #username, #password, #client_organization, #client_name, #client_position, #client_email { 
   border-bottom: 1px white; 
   box-shadow: 0 1px 0 0 white;
