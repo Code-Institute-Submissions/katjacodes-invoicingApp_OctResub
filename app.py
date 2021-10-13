@@ -62,9 +62,9 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                return redirect(url_for(
+                "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -97,9 +97,9 @@ def logout():
 @app.route("/add_client", methods=["GET", "POST"])
 def add_client():
     if request.method == "POST":
-        mongo.db.clientInfo.insert_one(request.form.to_dict())
-        flash("Client Successfully Added")
-        return redirect(url_for("get_clientInfo"))
+            mongo.db.clientInfo.insert_one(request.form.to_dict())
+            flash("Client Successfully Added")
+            return redirect(url_for("get_clientInfo"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("addClient.html", categories=categories)
@@ -122,6 +122,7 @@ def edit_clientInfo(clientInfo_id):
     clientInfo = mongo.db.clientInfo.find_one({"_id": ObjectId(clientInfo_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("editClient.html", clientInfo=clientInfo, categories=categories)
+
 
 @app.route("/delete_clientInfo/<clientInfo_id>")
 def delete_clientInfo(clientInfo_id):
