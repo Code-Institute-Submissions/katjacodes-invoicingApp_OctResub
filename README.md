@@ -5,9 +5,13 @@
 </div>
 <br>
 
-[View deployed site here](https://katjacodes.github.io/northern-sonoma-CERT/)
+[View deployed site here](https://#/)
 
 ## Project Description
+As a freelance interpreter, invoicing is the most tedious part of my job. However, it is also crucial because it is how I get paid. Existing invoicing apps do not really work for because of the specific rate structure I have as an interpreter working within the language justice framework, i.e., charging based on the client's overall budget. Building an application to autmoate invoicing has been a goal of mine ever since I embared on my coding journey with the Code Institute.
+
+The current version of the app is a prototype designed to be used only by myself. However, in the future I hope to tweak it further add additinal features based on my experience using the app and share it with other language justice practitioners. 
+
 The online presence for Northern Sonoma County CERT, a community emergency preparedness program located in northern Sonoma County in northern California, United States, was created by Katja Schatte to help Northern Sonoma CERT. The current purpose of the website is to provide information about the upcoming Fire and Earthquake Safety Expo and allow both English- and Spanish-speaking community members to sign up as volunteer for the expo.
 
 Community Emergency Response Teams (CERT) are based on the National CERT Program, run by FEMA, the United States' Federal Emergency Management Agency. The local programs are administered by a local goverment agency, such as a police or fire department. The agency trains community members in basic disaster response skills, customized to the most prevalent emergencies in the respectie region. In California, these emergencies include earthquakes and wildfires. In the event of a major disaster, the trained volunteer emergency workers are equipped to support local first responders.
