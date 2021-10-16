@@ -76,25 +76,25 @@
                 <tbody>
                     <tr>
                         <td>
-                            <div class="input-field col s12 white=text">
+                            <div class="input-field col s12">
                                 <select id="rate_type" name="rate_type" class="validate" method="GET" required>
                                     <option value="" disabled selected>Choose rate type</option>
                                     {% for rateType in rateTypes %}
                                         <option value="{{ rateType.rate_type }}">{{ rateType.rate_type }}</option>
                                     {% endfor %}
                                 </select>
-                                <label for="rate_type" class="white-text">Rate Type</label>
+                                <label for="rate_type" class="black-text">Interpreting</label>
                             </div>
                         </td>
                         <td>
-                            <div class="input-field col s12 white=text">
+                            <div class="input-field col s12">
                                   <select onchange="add_number()" id="interpreting_amount" name="interpreting_amount" class="validate" method="GET" required>
                                       <option value="" disabled selected>Choose amount</option>
                                       {% for interpretingAmount in interpretingAmounts %}
                                           <option value="{{ interpretingAmount.interpreting_amount }}">{{ interpretingAmount.interpreting_amount }}</option>
                                       {% endfor %}
                                   </select>
-                                  <label for="interpreting_amount" class="white-text">Rate Type</label>
+                                  <label for="interpreting_amount" class="black-text">Amount</label>
                             </div>
                           </td>
                         </td>
@@ -102,32 +102,32 @@
 
                     <tr>
                         <td>
-                            <div class="input-field col s12 white=text">
+                            <div class="input-field col s12">
                                 <select id="consulting" name="consulting" class="validate" method="GET">
                                     <option value="" disabled selected>Billable consulting?</option>
                                     {% for consulting in consultings %}
                                         <option value="{{ consulting.consulting }}">{{ consulting.consulting }}</option>
                                     {% endfor %}
                                 </select>
-                                <label for="consulting" class="white-text">Consulting</label>
+                                <label for="consulting" class="black-text">Consulting</label>
                             </div>
                         </td>
                         <td>
-                            <div class="input-field col s12 white=text">
+                            <div class="input-field col s12">
                                   <select onchange="add_number()" id="consulting_amount" name="consulting_amount" class="validate" method="GET">
                                       <option value="" disabled selected>Choose amount</option>
                                       {% for consultingAmount in consultingAmounts %}
                                           <option value="{{ consultingAmount.consulting_amount }}">{{ consultingAmount.consulting_amount }}</option>
                                       {% endfor %}
                                   </select>
-                                  <label for="consulting_amount" class="white-text">Rate Type</label>
+                                  <label for="consulting_amount" class="black-text">Amount</label>
                             </div>
                           </td>
                         </td>
                     </tr>
 
                     <tr>
-                        <td style="font-weight: 700; text-align: right;">TOTAL</td>
+                        <td style="font-weight: 700; text-align: right;">TOTAL &nbsp; &nbsp; &nbsp; $</td>
                         <td><input type="text" id="txtresult" name="TextBox3"></td>
                     </tr>
                 </tbody>
