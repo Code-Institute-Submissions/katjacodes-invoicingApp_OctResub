@@ -88,7 +88,7 @@
                         </td>
                         <td>
                             <div class="input-field col s12 white=text">
-                                  <select id="interpreting_amount" name="interpreting_amount" class="validate" method="GET" required>
+                                  <select onchange="add_number()" id="interpreting_amount" name="interpreting_amount" class="validate" method="GET" required>
                                       <option value="" disabled selected>Choose amount</option>
                                       {% for interpretingAmount in interpretingAmounts %}
                                           <option value="{{ interpretingAmount.interpreting_amount }}">{{ interpretingAmount.interpreting_amount }}</option>
@@ -99,7 +99,7 @@
                           </td>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <div class="input-field col s12 white=text">
@@ -114,7 +114,7 @@
                         </td>
                         <td>
                             <div class="input-field col s12 white=text">
-                                  <select id="consulting_amount" name="consulting_amount" class="validate" method="GET">
+                                  <select onchange="add_number()" id="consulting_amount" name="consulting_amount" class="validate" method="GET">
                                       <option value="" disabled selected>Choose amount</option>
                                       {% for consultingAmount in consultingAmounts %}
                                           <option value="{{ consultingAmount.consulting_amount }}">{{ consultingAmount.consulting_amount }}</option>
@@ -124,6 +124,11 @@
                             </div>
                           </td>
                         </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight: 700; text-align: right;">TOTAL</td>
+                        <td><input type="text" id="txtresult" name="TextBox3"></td>
                     </tr>
                 </tbody>
               </table>
@@ -154,6 +159,19 @@
                 document.getElementById('clientName').innerHTML = `<p>${client.client_name}</p>`
                 document.getElementById('clientPosition').innerHTML = `<p>${client.client_position}</p>`
                 document.getElementById('clientEmail').innerHTML =`<p>${client.client_email}</p>`
+            }
+            
+            /* credit: code taken from https://www.codegrepper.com/code-examples/javascript/calculate+two+number+and+diplay+next+field+without+reload+the+page+javascript and edited to fit project needs */
+            var text1 = document.getElementById("interpreting_amount");
+            var text2 = document.getElementById("consulting_amount");
+
+            function add_number() {
+                var first_number = parseFloat(text1.value);
+                if (isNaN(first_number)) first_number = 0;
+                var second_number = parseFloat(text2.value);
+                if (isNaN(second_number)) second_number = 0;
+                var result = first_number + second_number;
+                document.getElementById("txtresult").value = result;
             }
         </script>  
 {%  endblock %} 
