@@ -44,4 +44,8 @@ a { color: inherit; }
       font-size: 1.5em;
       text-align: left;
   }  
+
+  .welcome {
+    font-size: 3em;
+  }
 }
