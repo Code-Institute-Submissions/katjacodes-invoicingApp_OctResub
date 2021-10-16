@@ -8,57 +8,69 @@
 [View deployed site here](https://#/)
 
 ## Project Description
-As a freelance interpreter, invoicing is the most tedious part of my job. However, it is also crucial because it is how I get paid. Existing invoicing apps do not really work for because of the specific rate structure I have as an interpreter working within the language justice framework, i.e., charging based on the client's overall budget. Building an application to autmoate invoicing has been a goal of mine ever since I embared on my coding journey with the Code Institute.
+As a freelance interpreter, invoicing is the most tedious part of my job. However, it is also crucial because it is how I get paid. Existing invoicing apps do not really work for because of the specific rate structure I have as an interpreter working within the language justice framework, i.e., charging based on the client's overall budget. Building an application to autmoate invoicing has been a goal of mine ever since I embarked on my coding journey with the Code Institute.
 
-The current version of the app is a prototype designed to be used only by myself. However, in the future I hope to tweak it further add additinal features based on my experience using the app and share it with other language justice practitioners. 
+The current version of the application is a prototype designed to be used only by myself. However, in the future I hope to tweak it further add additinal features based on my experience using the application and share it with other language justice practitioners. 
 
-The online presence for Northern Sonoma County CERT, a community emergency preparedness program located in northern Sonoma County in northern California, United States, was created by Katja Schatte to help Northern Sonoma CERT. The current purpose of the website is to provide information about the upcoming Fire and Earthquake Safety Expo and allow both English- and Spanish-speaking community members to sign up as volunteer for the expo.
-
-Community Emergency Response Teams (CERT) are based on the National CERT Program, run by FEMA, the United States' Federal Emergency Management Agency. The local programs are administered by a local goverment agency, such as a police or fire department. The agency trains community members in basic disaster response skills, customized to the most prevalent emergencies in the respectie region. In California, these emergencies include earthquakes and wildfires. In the event of a major disaster, the trained volunteer emergency workers are equipped to support local first responders.
-
-At the moment, the Northern Sonoma CERT is looking specifically for a website to allow community members to access the flyer, sign up for its upcoming Fire and Earthquake Safety Expo, and share photos after the expo. The program's primary mode of interaction and communication with the community is currently its Facebook page. A link to it features promintently on every page as part of the navigation bar. However, in the future, the purpose of the website will shift to a more general representation of the program and include a general description of the program's purpose and announcements of various upcoming events.
-
-Currently, the general goals of the website are:
-* Provide information about the upcoming Fire and Earthquake Safety Expo
-* Allow community members to sign up for specific activties offered as part of the expo
-* A photo gallery where the site admins can upload pictures from the expo after the event (currently contains test images)
-* Provide all information and functionalities in both English and Spanish to make the website more widely accessible to the local community. (The website creator is an English<>Spanish translator, interpreter, and copy writer.)
+Currently, the general goals of the application are:
+* Provide login, logout, and new user registration functionality
+* Accept new client data and store it in the database
+* Allow the user to edit and delete existing client data entries
+* Provide an easy-to-use templae for interpreting invoice creation
+* Convert the HTML invoice into a PDF document ready to be shared with clients
 
 
 ## UX
 
 ### Core Target Audience
-#### The core target audience of this organization is:
-* Residents in northern Sonoma County
-* Local community members of all ages
-* English- and Spanish-speaking individuals
-* Community members who have heard about the Northern Sonoma County CERT program and visit the website to learn about upcoming activities
-* Community members who alredy know about the Fire and Earthquake Safety Expo and want to sign up to volunteer
-* Members of CERT programs in other parts of the country who are interested in learning more about the activities of this program
+#### The core target audience of this application is:
+* Interpreters working within the language justice framework, like myself
+* Interpreters living in the United States and using English as their language of communication with their clients
+* Interpreters with recurring clients whose invoicing process can be facilitated by drawing on a client information database
 
-#### Visitors to this website are searching for:
-* More information about the upcoming the Fire and Earthquake Safety Expo
-* A way to register as volunteers for the Fire and Earthquake Safety Expo
-* After the event: Share and look at photos
+#### Users of this application are searching for:
+* A place to save, modify, and delete interpreting client information
+* An easy way to created interpreting invoices based on existing client and rate information
 
 #### Client Stories
-1. As a new visitor to the website, I want to be able to easily accesss information in either English or Spanish, depending on my preferred language.
-2. As a new visitor to the website, I want to have easy access to more information about the upcoming Fire and Earthquake Safety Expo and potentially sign up to volunteer.
-3. As someone already familiar with the Fire and Earthquake Safety Expo and interested in volunteering, I want to know what volunteer roles are available and sign up.
-4. As a local beat reporter, I want to have acess to basic information regarding the Fire and Earthquake Safety Expo, including date, time, and where to find additional information.
+1. As a new user of the application, I want to be able to easily register and start using the applilication.
+2. As an existing user of the application, I want to be able to manage my client information and easily create ready-to-share invoices
 
 ### Wireframe Mockups: 
-- [Landing Page](assets/images/wireframes/#nosococertLandingPage.png)
-- [Events](assets/images/wireframes/nosococertEvents.png)
-- [Gallery](assets/images/wireframes/nosococertGallery.png)
+- [Registration Page](assets/img/wireframes/#)
+- [Login age](assets/img/wireframes/#)
+- [Add Client Page](assets/img/wireframes/#)
+- [All Clients Page](assets/img/wireframes/#)
+- [Edit Client Page](assets/img/wireframes/#)
+- [New Invoice Page](assets/img/wireframes/#)
+- [Profile Page](assets/img/wireframes/#)
 
 
 ## Features
 #### Across Pages
-Each page features a responsive **navigation bar** with a **language selection menu** (top left) and an easily recognizable **Facebook icon** linking to the program's Facebook page (top right).
-Each page has a **footer** with **copyright information**. 
+Each page features a responsive **navigation bar** with conventional placing of **logo** (top left).
 
-Every page features a background of a typical Sonoma County landscape (vineyards). The background image is cropped to make the content recognizable and aesthetically appealing across devices and screen orientations. 
+Every page features a background appropriate to the them of invoicing. 
+
+#### Registration
+The registration page allows new users to register. The **input fields** for username and password have input **validation** to ensure the new account is properly set up. Users who are already registered can get the login page by clicking either on the navbar item in the upper right corner or by the link proviced below the sign-up field.
+
+#### Login
+The login page allows existing users to log in to their account. The **input fields** for username and password have input **validation** to ensure the input matches the requirements for each field. New users can get the registration page by clicking either on the navbar item in the upper right corner or by the link proviced below the login field.
+
+#### Add Client Page
+The add client page allows users to add client information to the database. Each entry consists of **four text input fields**:
+- Name of the organization
+- Name of the contact 
+- Position of the contact
+- Email address of the contact
+In addition, the **dropdown menu** at the bottom lets the user select the rate tier of the organization: Institution, Small Non-Profit, Large Non-Profit. All fields are required. Upon completing the form, the user will click on the **Submit button** to add the new client to the database.
+
+#### Manage Clients Page
+The manage client page contains a list of all client entries. 
+
+
+
 
 #### Home
 The landing page features the offical CERT logo as the **hero image**. The percentage of the screen the hero image covers increases for screens 768px and above in potrait mode and decreases for screens 768px and above in landscape mode to make the page visually appealing and the content below the hero image easy to locate. Below the hero image, visitors can find direct links to **the event flyer** in pdf format and the volunteer sign-up form. Depending on the language in which the visitor is accesing the landing page, they will be directed to the flyer and the sign-up form in either English or Spanish. In the future, the links to the current event-related information will be replaced with more general information about the program and updated links to event information. Due to the evolving business needs of the client, the homepage is designed in a way that its content can easily be updated and adapted. 
