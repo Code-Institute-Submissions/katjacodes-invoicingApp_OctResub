@@ -74,22 +74,57 @@
                 </thead>
         
                 <tbody>
-                  <tr>
-                    <td>
-                        <div class="input-field col s12 white=text">
-                            <select id="rate_type" name="rate_type" class="validate" method="GET" required>
-                                <option value="" disabled selected>Choose rate type</option>
-                                {% for rateType in rateTypes %}
-                                    <option value="{{ rateType.rate_type }}">{{ rateType.rate_type }}</option>
-                                {% endfor %}
-                            </select>
-                            <label for="rate_type" class="white-text">Rate Type</label>
-                        </div>  
-                    </td>
-                    <td>
-                        <div id='#'><p>Rate</p></div>
-                    </td>
-                 </tr>
+                    <tr>
+                        <td>
+                            <div class="input-field col s12 white=text">
+                                <select id="rate_type" name="rate_type" class="validate" method="GET" required>
+                                    <option value="" disabled selected>Choose rate type</option>
+                                    {% for rateType in rateTypes %}
+                                        <option value="{{ rateType.rate_type }}">{{ rateType.rate_type }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="rate_type" class="white-text">Rate Type</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field col s12 white=text">
+                                  <select id="interpreting_amount" name="interpreting_amount" class="validate" method="GET" required>
+                                      <option value="" disabled selected>Choose amount</option>
+                                      {% for interpretingAmount in interpretingAmounts %}
+                                          <option value="{{ interpretingAmount.interpreting_amount }}">{{ interpretingAmount.interpreting_amount }}</option>
+                                      {% endfor %}
+                                  </select>
+                                  <label for="interpreting_amount" class="white-text">Rate Type</label>
+                            </div>
+                          </td>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="input-field col s12 white=text">
+                                <select id="consulting" name="consulting" class="validate" method="GET">
+                                    <option value="" disabled selected>Billable consulting?</option>
+                                    {% for consulting in consultings %}
+                                        <option value="{{ consulting.consulting }}">{{ consulting.consulting }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="consulting" class="white-text">Consulting</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field col s12 white=text">
+                                  <select id="consulting_amount" name="consulting_amount" class="validate" method="GET">
+                                      <option value="" disabled selected>Choose amount</option>
+                                      {% for consultingAmount in consultingAmounts %}
+                                          <option value="{{ consultingAmount.consulting_amount }}">{{ consultingAmount.consulting_amount }}</option>
+                                      {% endfor %}
+                                  </select>
+                                  <label for="consulting_amount" class="white-text">Rate Type</label>
+                            </div>
+                          </td>
+                        </td>
+                    </tr>
                 </tbody>
               </table>
 
@@ -110,15 +145,15 @@
             /* credit: thank you to Joshua Ugba for helping me make Python and JavaScript communicate with each other */
             let clientInfoList =  []
             fetch('/api/invoice')
-             .then(res => res.json())
-             .then(list => clientInfoList = list)
+                .then(res => res.json())
+                .then(list => clientInfoList = list)
 
             function changeRate() {
-              let email = document.getElementById('client_organization').value
-              let client = clientInfoList.filter((client) => client.client_email == email)[0]
-              document.getElementById('clientName').innerHTML = `<p>${client.client_name}</p>`
-              document.getElementById('clientPosition').innerHTML = `<p>${client.client_position}</p>`
-              document.getElementById('clientEmail').innerHTML =`<p>${client.client_email}</p>`
-          }
+                let email = document.getElementById('client_organization').value
+                let client = clientInfoList.filter((client) => client.client_email == email)[0]
+                document.getElementById('clientName').innerHTML = `<p>${client.client_name}</p>`
+                document.getElementById('clientPosition').innerHTML = `<p>${client.client_position}</p>`
+                document.getElementById('clientEmail').innerHTML =`<p>${client.client_email}</p>`
+            }
         </script>  
 {%  endblock %} 
