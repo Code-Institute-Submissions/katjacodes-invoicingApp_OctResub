@@ -1,3 +1,5 @@
+/*------------ USED ACROSS THE SITE ------------*/
+
 body, html {
   height: 100%;
   margin: 0;
@@ -16,10 +18,6 @@ nav {
 
 a { color: inherit; } 
 
-#username, #password, #client_organization, #client_name, #client_position, #client_email { 
-  border-bottom: 1px white; 
-  box-shadow: 0 1px 0 0 white;
-}
 
 .card-panel {
   border-bottom: solid 1px white;
@@ -27,6 +25,14 @@ a { color: inherit; }
   border-right: solid 1px white;
   border-left: solid 1px white;
 }
+
+#username, #password, #client_organization, #client_name, #client_position, #client_email { 
+  border-bottom: 1px white; 
+  box-shadow: 0 1px 0 0 white;
+}
+
+
+/*------------ CLIENT INFO PAGE------------*/
 
   .btn-small {
     margin: 5px;
@@ -36,6 +42,16 @@ a { color: inherit; }
     margin: 5px;
     line-height: 42px;
 }
+
+
+/*------------ EDIT CLIENT PAGE ------------*/
+
+.flex-parent {
+  display: flex;
+  min-height: 0px;
+  justify-content: center;
+}
+
 
 /*------------ MEDIA QUERIES ------------*/
 
@@ -49,3 +65,4 @@ a { color: inherit; }
     font-size: 3em;
   }
 }
+

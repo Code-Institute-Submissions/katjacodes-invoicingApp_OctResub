@@ -58,17 +58,19 @@
             </div>
             
             <div class="row">
-                <div class="col s12 m8 offset-m4 align-center">
-                    <!-- submit button -->
-                    <button class="waves-effect amber lighten-2 black-text btn" style="margin-right: 3em;">
-                        <a><i type="submit" class="fas fa-paper-plane black-text"></i>Submit</a>
-                    </button>
-                    <!-- cancel button -->
-                    <!-- <button class="col s12 btn-large cyan lighten-4 black-text" type="submit">Submit
-                        <i class="fas fa-paper-plane black-text"></i> -->
-                    <button class="waves-effect cyan lighten-4 black-text btn">
-                        <a href="{{ url_for('get_clientInfo') }}"></a><i class="fas fa-times-circle right"></i>Cancel</a>
-                    </button>
+                <div class="col-12">
+                    <div class="flex-parent">
+                        <!-- submit button -->
+                        <button class="waves-effect amber lighten-2 black-text btn editbuttons" style="margin-right: 3em;">
+                            <a><i type="submit" class="fas fa-paper-plane black-text"></i>Submit</a>
+                        </button>
+                        <!-- cancel button -->
+                        <!-- <button class="col s12 btn-large cyan lighten-4 black-text" type="submit">Submit
+                            <i class="fas fa-paper-plane black-text"></i> -->
+                        <button class="waves-effect cyan lighten-4 black-text btn editbuttons">
+                            <a href="{{ url_for('get_clientInfo') }}"></a><i class="fas fa-times-circle right"></i>Cancel</a>
+                        </button>
+                    </div>
                 </div>
             </div>
         </form>
