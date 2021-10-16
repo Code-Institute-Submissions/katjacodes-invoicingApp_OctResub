@@ -64,5 +64,9 @@ a { color: inherit; }
   .welcome {
     font-size: 3em;
   }
+
+  #editbutton, #deletebutton {
+    display: block;
+  }
 }
 
