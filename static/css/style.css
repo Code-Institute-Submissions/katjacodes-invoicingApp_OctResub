@@ -36,3 +36,12 @@ a { color: inherit; }
     margin: 5px;
     line-height: 42px;
 }
+
+/*------------ MEDIA QUERIES ------------*/
+
+@media only screen and (max-width: 599px) {
+  nav .brand-logo {
+      font-size: 1.5em;
+      text-align: left;
+  }  
+}
