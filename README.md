@@ -64,10 +64,26 @@ The add client page allows users to add client information to the database. Each
 - Name of the contact 
 - Position of the contact
 - Email address of the contact
-In addition, the **dropdown menu** at the bottom lets the user select the rate tier of the organization: Institution, Small Non-Profit, Large Non-Profit. All fields are required. Upon completing the form, the user will click on the **Submit button** to add the new client to the database.
+In addition, the **dropdown menu** at the bottom lets the user select the rate tier of the organization: Institution, Small Non-Profit, Large Non-Profit. All fields are required. Upon completing the form, the user will click the **Submit button** to add the new client to the database.
 
 #### Manage Clients Page
-The manage client page contains a list of all client entries. 
+The manage client page contains a **list of all client organizations in the database**. Upon clicking on the caret, the user can view the full set of client details fore each user. Clicking the carot again, closes the details section. Additionally, the user can delete any entry by clikcing the **Delete button** or edit it by clicking the **Edit button**, which takes the user to the edit client page.
+
+##### Edit Client Page
+The edit client page allows users to edit existing client information. Each entry consists of **four text input fields**:
+- Name of the organization
+- Name of the contact 
+- Position of the contact
+- Email address of the contact
+In addition, the **dropdown menu** at the bottom lets the user select the rate tier of the organization: Institution, Small Non-Profit, Large Non-Profit. Subsequently, the user can either click the **Submit button** to modify the client data in the database or the **Cancel button** to discard the changes. Upon clicking the Submit button, the user sees the confirmation message "Client Successfully Updated." Upon clicking either button, the user is eventually sent back to the manage clients page.
+
+#### New Invoice Page
+The new invoice page provides a templae for the user to create an invoice based on the client and rate data in the database. Upon selecting the **client organization** from the dropdown menu, the remaining fields (contact, position, and email address) populate automatically. In the next template section, the user manually adds ***event name, date, and time**. In the third and final template section, the user selects a **rate based on the job duration** and a **billable amount** from two dropdown menus. If **consulting** was part of the job, the user gets to select this and the corresponding **billable amount** in from the dropdown menus on the next line. At the bottome of the page, the total amount gets caculated automatically. Finally, the user can click the **Download PDF** button to download his invoice as a pdf document.
+
+#### New Invoice Page
+The profile page greets the user with his **username**. It is displayed upon login, and the user can get back to it anytime while they are logged in by clicking on the logo in the upper left corner. In addtion to the greeting, the profile page provides a quick overview of the application functionality with hyperlinks to the corresponding pages. 
+
+
 
 
 
