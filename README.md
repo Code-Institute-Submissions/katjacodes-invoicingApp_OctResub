@@ -118,10 +118,6 @@ The profile page greets the user with his **username**. It is displayed upon log
     - This project uses **Heroku** as a cloud platform to deploy the project.
 - [ColorSpace](https://mycolor.space)
     - This project uses **ColorSpace** to determine font colors that go well together.
-- [WAVE](https://wave.webaim.org)
-    - This project uses the **Web Accessibilty Evaluation Tool** to make sure the website if accessible to visitors of differing abilities. 
-- [WebAIM](https://webaim.org/resources/contrastchecker/)
-    - This project uses the **WebAIM contrast checker** to make sure the website is accessible to readers with impaired vision.
 - [HTML to PDF Rocket](https://www.html2pdfrocket.com/)
     This project uses **HTML 2 PDF Rocket** to provide an API for HTML to PDF conversion.
     
