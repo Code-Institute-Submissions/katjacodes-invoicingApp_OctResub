@@ -82,7 +82,8 @@ function validateMaterializeSelect() {
                 document.getElementById("txtresult").value = result;
             }
 
-            /**
+/* credit: code taken from https://www.html2pdfrocket.com/Examples/javascript and edited to fit project needs */            
+/**
 * html: HTML string to convert to PDF
 * savePdf: Callback for saving PDF
 * Opens the PDF in a new tab, and returns it as a data URI

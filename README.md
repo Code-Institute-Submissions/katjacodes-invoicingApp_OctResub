@@ -5,7 +5,7 @@
 </div>
 <br>
 
-[View deployed site here](https://#/)
+[View deployed site here](https://katjas-invoicing-app.herokuapp.com/)
 
 ## Project Description
 As a freelance interpreter, invoicing is the most tedious part of my job. However, it is also crucial because it is how I get paid. Existing invoicing apps do not really work for because of the specific rate structure I have as an interpreter working within the language justice framework, i.e., charging based on the client's overall budget. Building an application to autmoate invoicing has been a goal of mine ever since I embarked on my coding journey with the Code Institute.
@@ -143,9 +143,9 @@ The profile page greets the user with his **username**. It is displayed upon log
 Testing information can be found in a separate [TESTING.md file](TESTING.md).
 
 ## Deployment
-This project was developed using the [Gitpod](https://gitpod.io), committed to git, and pushed to GitHub using the Gitpod terminal. 
+This project was developed using the [Gitpod](https://gitpod.io) deveopment environment, committed to git, and pushed to GitHub using the Gitpod terminal. 
 
-To deploy this page to GitHub Pages from its [GitHub repository](https://github.com/katjacodes/northern-sonoma-CERT), the following process was completed: 
+To deploy this page to [Heroku](https://heroku.com/) from its [GitHub repository](https://github.com/katjacodes/invoicingApp), the following process was completed: 
 1. Log into GitHub. 
 2. Klick on the account avatar in the top right corner and select "Your repositories" from the dropdown menu.
 3. From the list of repositories, select **northern-sonoma-CERT**.
@@ -154,7 +154,7 @@ To deploy this page to GitHub Pages from its [GitHub repository](https://github.
 6. In the **Source** section, select **Master Branch** from the dropdown menu, then click on **Save**.
 7. As a result, the page is refreshed and the website deployed. The **website URL** appears in a blue box above the **Source Section**.
 
-At the moment of submitting this Milestone project the Development Branch and Master Branch are identical. 
+At the moment of submitting this Milestone project the Development Branch and Main Branch are identical. 
 
 ### How to Run This Project Locally
 To clone this project into Gitpod you will need a Github account, and API Spreadsheets account, and a Gmail account. You can [create a Github account here](https://github.com/), [create an API Spreadsheets account here.](https://www.apispreadsheets.com/), and [create a Gmail account here](https://mail.google.com/).
