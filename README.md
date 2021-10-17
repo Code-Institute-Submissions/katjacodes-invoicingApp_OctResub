@@ -93,7 +93,7 @@ The profile page greets the user with his **username**. It is displayed upon log
 - [Login Page](login.html) - Allows existing users to log in to their account and leads new users to the registration page throughte embedded link or by clicking on the Log In item in the navbar.
 - [Add Client Page](addClient.html) - Displayed only to logged in users. Provides interface to enter and save new client information.
 - [Manage Clients Page](clientInfo.html) - Displayed only to logged in users. Displays the organization name of all saved client information entries and allows uers to view the complete entries, delete them, and access the edit page. 
-- [Edit Client Page](editClient.html) - Displayed only to logged in users. Allows users to modify every line of the selected client information entry and either save or discard the changes.
+- [Edit Client Page](editClient.html) - Displayed only to logged in users. Allows users to modify every line of the selected client information entry and either save or discard the changes. Automatically displays the current date in standard U.S. format at the top of the page.
 - [New Invoice Page](invoice.html) - Displayed only to logged in users. Allows users to create an invoice by using the dropdown menus and textfields that are part of the form and converting the completed form into ready-to-share pdf document at the end.
 - [Profile Page](profile.html) - Displayed only to logged in users. Provides quick explanations of and direct links to the different functionalities of the application.
 - [Events Page in English](events.html) and [Events Page in Spanish](events_es.html) - Provides information about the different volunteer roles available during the Fire and Earthquake Safety Expo at a glance followed by a **sign-up form**.
@@ -123,7 +123,7 @@ The profile page greets the user with his **username**. It is displayed upon log
 - [WebAIM](https://webaim.org/resources/contrastchecker/)
     - This project uses the **WebAIM contrast checker** to make sure the website is accessible to readers with impaired vision.
 - [HTML to PDF Rocket](https://www.html2pdfrocket.com/)
-    This project uses **HTML to PDF Rocket** to provide an API for HTML to PDF conversion.
+    This project uses **HTML 2 PDF Rocket** to provide an API for HTML to PDF conversion.
     
 ### Libraries
 - [Materialize](https://materializecss.com/)
@@ -146,27 +146,38 @@ Testing information can be found in a separate [TESTING.md file](TESTING.md).
 This project was developed using the [Gitpod](https://gitpod.io) deveopment environment, committed to git, and pushed to GitHub using the Gitpod terminal. 
 
 To deploy this page to [Heroku](https://heroku.com/) from its [GitHub repository](https://github.com/katjacodes/invoicingApp), the following process was completed: 
-1. Log into GitHub. 
-2. Klick on the account avatar in the top right corner and select "Your repositories" from the dropdown menu.
-3. From the list of repositories, select **northern-sonoma-CERT**.
-4. From the menu bar at the top of the page, select **Settings**.
-5. In the menu bar on the left side of the screen, select the second menu item from the bottom, "Pages."
-6. In the **Source** section, select **Master Branch** from the dropdown menu, then click on **Save**.
-7. As a result, the page is refreshed and the website deployed. The **website URL** appears in a blue box above the **Source Section**.
+1. Log in to Heroku
+2. Click **"]New** and select **Create New App** from the drop-down menu in the upper right half of the window. 
+3. Enter a **Name** for your application. The name needs to be unique. Next, select the **Region** closest to your geographical location. When you're finished, click **Create App**.
+4. In the navbar at the top of the page, click on **Settings**, scroll down to the **Reveal Config Vars** button, and click it.
+5. Enter the following information:
+    IP: 0.0.0.0
+    MONGODB_NAME: [name of the MongoDB cluster you are using for your application]
+    MONGO_URI: [the URI you created after setting up your collection in MongoDB found by logging in to MongoDB > navigating to the cluster that holds the collection you are using for your application > clicking on "Connect" > selecting "Connect your application" > selecting the correct driver & version > copying the generated string & replacing the placeholders in it with your own information]
+    PORT: 5000
+    SECRET_KEY: [copy from the [env.py](env.py) file
+    Click **Add** after entering each variable.
+6. Scroll down and click **Buildpacks** and select **Python**, then click **Save changes**.
+7. In the navbar at the top of the page, click on **Deploy**, scroll down to **Deployment method**, and select **GitHub**.
+8. **Authorize** the connection to GitHub.
+9. Search for your **GitHub repository name** and select the repository holding the code for you application.
+10. Make sure the **Main Branch** is selected for deployment and select **Enable Automatic Deploys** for Heroku to automatically re-build your application every time you push your code to GitHub.
+11. Click the **Deploy Branch** button. Once Heroku has built the application, a pop-up message will confirm deployment
+12. You can click the **View** button to be taken directly to the site.
 
 At the moment of submitting this Milestone project the Development Branch and Main Branch are identical. 
 
-### How to Run This Project Locally
-To clone this project into Gitpod you will need a Github account, and API Spreadsheets account, and a Gmail account. You can [create a Github account here](https://github.com/), [create an API Spreadsheets account here.](https://www.apispreadsheets.com/), and [create a Gmail account here](https://mail.google.com/).
+### How to Clone the Repository
+To clone this project into Gitpod you will need a Github account and an HTML 2 PDF Rocket account. You can [create a Github account here](https://github.com/), and you can [create an HTML 2 PDF Rocket account here.](https://www.html2pdfrocket.com/).
 
 Then follow these steps:
 1. Log into [Gitpod](https://gitpod.com) with your gitpod account.
-2. Navigate to the [Project GitHub repository](https://github.com/katjacodes/gbrw)
+2. Navigate to the [Project GitHub repository](https://github.com/katjacodes/invoicingApp)
 3. Click the green "Gitpod" button in the top right corner of the respository
 4. This will trigger a new gitpod workspace to be created based on the code in GitHub. There, you will be able to work locally.
 
 To work on the project code within a local IDE such as VSCode, Sublime Text, etc.:
-1. Navigate to the [Project GitHub repository](https://github.com/katjacodes/gbrw)
+1. Navigate to the [Project GitHub repository](https://github.com/katjacodes/invoicingApp)
 2. Click the "Code" download button next to the green "Gitpod" button.
 3. In the Clone section, select HTTPs and copy the clone URL for the repository. 
 4. Open your local terminal.
@@ -174,40 +185,26 @@ To work on the project code within a local IDE such as VSCode, Sublime Text, etc
 6. Type ```git clone```, and then paste the URL you copied in Step 4.
 7. Press Enter for your local clon to be created.
 
-You will need to create a Google spreadsheet and an API Spreadsheets acount to create your own sign-up form. To do so, follow theses steps:
-1. Create a Google spreadsheet whose colum titles exactly match the ```name``` attribute of your form ```<input>``` tags.
-2. If you want to create more than one spreadsheet within the same file, you can add additional sheets. Make sure to specify which sheet to link to in the drop-down menu that appears after you create the API url in **API Spreadsheets**.
-3. Create an **API Spreadsheets** account or log into yours if you already have one.
-4. On the dashboard, click on the **Google Sheets** button, sign in with your Gmail account, and select the spreadsheet you created to hold the form data.
-5. Copy the API url for the spreadsheet and paste it into line 104 of the [form validation JavaScript file](form-validation.js), as demonstrated below:
-
-```// submit to the server if the form is valid```\
-```if(isFormValid) {```\
-    &nbsp;&nbsp;&nbsp;&nbsp;``` var vals = $("#signup").serialize();```\
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```$.ajax({```\
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```url: "[INSERT API URL HERE]]",```  
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```method: "POST",```\
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```data: vals,```\
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```success: function(){```\
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```alert("Form data submitted");```\
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```},```\
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```error: function(){```\
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```alert("There was an error");```\
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```}```\
-      ```});```\
+You will need to create an HTML to PDF Rocket account to obtain an API key for the API that will allow you to create PDF a PDF version of your invoice. To do so, follow these steps.
+1. Ater you [create your HTML 2 PDF Rocket account](https://www.html2pdfrocket.com/), you will be sent your API key to the email you registered with. At that time, you can also update your password.
+2. Navigate to to the [Code Examples page](https://www.html2pdfrocket.com/Examples/javascript) and copy the HTML and JavaScript code to create a button that will allow you to create PDF documents.
+3. Make sure to update the following information in the code:
+    - Your API key
+    - The URL of the page you want turn into a PDF document, i.e., the URL of your invoice page.
 
 
 ## Credits
 ### Content
-- The event flyers in English and Spanish and the English volunteer role titles and descriptions were provided by Geoff Peters. 
+- The background image was created by [Ramiro Menes for Unsplash](https://unsplash.com/photos/sMCBEI5zkqc) and made available under the [Do Whatever You Want License](https://unsplash.com/license).
 
 ### Code
-- HTML and JS code for the burger menu was originally taken from [W3 Schools](https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_collapse) and then edited.
-- HTML, CSS, and JS code for the sign-up form was originally taken from [JavaScript TUTORIAL](https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/), [Love Spreadsheets](https://lovespreadsheets.medium.com/save-web-html-form-data-to-google-sheets-47e48f7517e6), and [CODEMAHAL](https://www.codemahal.com/video/checkboxes-and-form-validation/)  and substantially edited to fit project needs
-- HTML, CSS, and JS code for the image gallery originally taken from [W3 Schools](http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/howto/howto_css_modal_images.asp.html) and edited to fit project needs.
-- HTML, CSS, and JS code for the scroll-to-top button originally taken from [W3 Schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top) and edited slightly to fit project needs.
+- The [Code Institute Walk-Through project](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching) for Milestone 3 was taken as a starting point for the set-up of the base, addClient, clientInfo, editClient, login, register, and logout templates and edited heavily.
+- The [Code Institute Walk-Through project](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching) for Milestone 3 was taken as a starting point for parts of the [app.py](app.py) file.
+- The JavaScript code for the automatic date set function on the invoice page was taken from [W3 Schools](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestrin) and edited to display the date in U.S. format.
+- The HTML and JavaScript code for the integration of the PDF conversion API was taken from [HTML 2 PDF Rocket](https://www.html2pdfrocket.com/Examples/javascript) and edited to fit project needs.
+- Joshua Ugba helped me understand how to connect Python and Javascript for the automatic address field population section of the invoice page.
+
 
 ### Acknowledgements
-- I got the opportunity to build a website for a real-world project from Geoff Peters.
-- My Code Institute mentor, Sebastian Immel provided helpful feedback regarding the behavior when I got stuck with my sign-up form. Thanks to his guidance, I tried coding the form validation adn submission pieces separately, which eventually solved my issue. (See [TESTING.md file](Testing.md) for details.)
-- Dominik Habersack helped me located a bug in my form submission code, which prevented the sign-up form from submitting. (See [TESTING.md file](Testing.md) for details.)
+- The Code Institute Slack Community was really helpful providing pointers when I got stuck and unable to see the forest for the trees.
+- Joshua Ugba took the time to explain to me in-depth how to integrate JavaScript and Python. I owe a better understanding of JSON files to him. 
