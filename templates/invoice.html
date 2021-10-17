@@ -27,7 +27,7 @@
                 <!-- client selection -->
                 <div class="row">
                     <form class="" action="/" method="post">
-                        <select onChange="changeRate()" id="client_organization" name="client_organization">
+                        <select onChange="changeRate()" id="client_organization" name="client_organization" aria-label="Select client organization">
                             <option value="" disabled selected>Choose client</option>
                             {% for clientInfo in clientInfos %}
                                 <option value="{{ clientInfo.client_email }}">{{ clientInfo.client_organization }}</option>
@@ -121,13 +121,14 @@
 
                     <tr>
                         <td style="font-weight: 700; text-align: right;">TOTAL &nbsp; &nbsp; &nbsp; $</td>
-                        <td><input type="text" id="txtresult" name="TextBox3"></td>
+                        <td><input type="text" id="txtresult" name="TextBox3" aria-label="Total amount"></td>
                     </tr>
                 </tbody>
               </table>
         </div>
         <div class="flex-parent frame">
-            <button class="col s12 btn-large cyan lighten-4 black-text" type="submit">Download PDF
+                        <select onChange="changeRate()" id="client_organization" name="client_organization" aria-label="Download PDF">
+                            <button class="col s12 btn-large cyan lighten-4 black-text" type="submit" >Download PDF
                 <a href="https://api.html2pdfrocket.com/pdf?value=http://katjas-invoicing-app.herokuapp.com/invoice&apikey=dc67c5f0-34b7-48c2-be1d-ccee3b855f7d"></a>
             </button>
         </div>
