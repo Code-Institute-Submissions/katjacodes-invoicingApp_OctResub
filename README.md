@@ -197,6 +197,7 @@ You will need to create an HTML to PDF Rocket account to obtain an API key for t
 - The [Code Institute Walk-Through project](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching) for Milestone 3 was taken as a starting point for the set-up of the base, addClient, clientInfo, editClient, login, register, and logout templates and edited heavily.
 - The [Code Institute Walk-Through project](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching) for Milestone 3 was taken as a starting point for parts of the [app.py](app.py) file.
 - The JavaScript code for the automatic date set function on the invoice page was taken from [W3 Schools](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestrin) and edited to display the date in U.S. format.
+- The JavaScript code for the addition of charges on the invoice page was taken from [Codegrepper](https://www.codegrepper.com/code-examples/javascript/calculate+two+number+and+diplay+next+field+without+reload+the+page+javascript) and edited to fit project needs.
 - The HTML and JavaScript code for the integration of the PDF conversion API was taken from [HTML 2 PDF Rocket](https://www.html2pdfrocket.com/Examples/javascript) and edited to fit project needs.
 - Joshua Ugba helped me understand how to connect Python and Javascript for the automatic address field population section of the invoice page.
 
