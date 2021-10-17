@@ -12,7 +12,8 @@ body, html {
 }
 
 
-a { color: inherit; } 
+a { color: inherit; 
+} 
 
 
 .card-panel {
@@ -71,4 +72,4 @@ a { color: inherit; }
   #editbutton, #deletebutton {
     display: block;
   }
-
+}
