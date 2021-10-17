@@ -12,47 +12,51 @@
 ### Client stories testing:
 Due to the very specific nature of the application, there are two kinds of users for this application: existing ones and new ones. Seamless access for both groups was tested during the testing process.
 
-## Testing client stories from UX section of README.md
-1. As a new visitor to the website, I want to have easy access to the music, so I can get a taste of the musical.
-   1. A link in the shape of an easily recognizable Spotify logo on the homepage leads the visitor directly to the musical's Spotify presence.
-   2. The logo at the top of each page lead the visitor back to homepage.
-3. For those who become curious about the music after learning some more about the musical, there is a link to the musical's Spotify page embedded in the copy on the About page
-    
-2. As a new visitor to the website, I want find reader-friendly, well-organized information about the musical's content, background, and those involved in it.
-   1. The navigation bar is structured based on the topics of most of interest to new visitors, moving from more general to more specific.
-   2. While visiting the Cast + Team page, the visitor can determine about which individuals they would like to learn more by clicking on the profile picture or the name.
-   3. The Cast + Team navigation bar button leads the visitor from the individual profile pages directly back to the overview page.
-   4. The About page contains information about both the background and the content of the musical without being overwhelming.
+#### Testing client stories from UX section of README.md
+1. As a new user of the application, I want to be able to easily register and start using the applilication.
+    1. The Login page appears upon navigating to the URL of the application, with the link to the registration displayed both at the bottom of the page and in the navbar.
+    2. Registration information is validated upon entry.
+    3. Upon successful registration, the new user is directed to the profile page with information about the application functinality and where to find it.
 
-3. As a new visitor to the website, I want to find out where I can find more information about the musical, especially on social media platforms I already use.
-   1. Visitors can get to the Contact by selecting it in the navigation bar 
-   2. Additionally, there is a direct link form the homepage to the Contact page
-   3. On top of the Contact page, visitors find easily recongizable links to the musical's Facebook and Instagram presence
-   4. Additionally, visitors have the option to either subscribe to the newsletter or send a message directly to the musical team
+2. As an existing user of the application, I want to be able to manage my client information and easily create ready-to-share invoices
+    1. The Login page appears upon navigating to the URL of the application.
+    2. Login information is validated upon entry.
+    3. Upon successful registration, the new user is directed to the profile page with information about the application functinality and where to find it.
+    4. In addition to the explanation on the profile page, all functionality is accessible through the navbar through appropriately labelled items.
 
-4. As someone already familiar with the musical, I want to have a way to stay updated about recent developments related to the musical, including its new premier date.
-   1. Visitors already familiar with the musical, can use the direct link to the Contact page provided on the homepage to sign up for the newsletter.
-
-5. As someone already familiar with the musical, I want to have a way to stay updated about recent developments related to the musical, including its new premier date.
-   1. The navigation bar item "Sponsors" leads to a full ist of local businesses and organizations supporting the musical financially.
-   (2. On request of the client, no direct links to the sponsors websites were included.)
-
-6. As a journalist focusing on local news and/or LGBTQIA issues, I want to be have access to background information about the musical and ways of contacting those involved.
-   1. The About page provides a summary of both the musical's background and content and links to its musicals for interested journalists to get a first impression of the musical.
-   2. To let journalists know to whom to address their message on the contact page, the copy on the About page includes the name of the writer, composer, and producer of the musical.
 
 ### Manual (logical) testing of all elements and functionality on every page.
 
-#### Home Page
-1. Navigation bar & homepage background image
-   1. Go to the "Home" page from a desktop.
-   2. Using both Firefox Developer Tools and different devices: Look at the homepage on a desktop screen, a tablet screen, and a phone screen (both in portrait and landscape orientation) to verify that
-      - The navigation bar turns into a burger menu when navigating to the homepage on a phone screen.
-      - The background image gets resized and cropped in a way that its content remains recognizable and aesthetically pleasing.
-   3. Make sure the burger menu pushes down the content when opened. _During testing, the menu would initially overlay the remaining website content. This turned out to be due to a typo in the linked script._
-   4. Click on the logo in the navigation bar and verify that it links to the homepage. 
-   5. Click on each navigation menu item and verify that it links to the correct page.
-   6. Repeat steps 4 and 5 on phone and a tablet.
+#### Login Page
+1. Navigage to the "Login" page from a desktop computer.
+2. Using both Firefox Developer Tools and different devices: Look at the login on a desktop screen, a tablet screen, and a phone screen to verify that the navigation bar turns into a burger menu when navigating to the login on a tablet or a phone screen.
+3. Click on the logo in the navigation bar and verify that it links back to the Login page.
+4. Verify that only the Registration and Login items are visible in the navbar to users who are not logged in.
+5. Click on each navbar item and the registration link at the bottom of the screen and verify that it links to the correct page.
+6. Repeat steps 4 and 5 on phone and a tablet.
+7. Log in with an existing user account and test if the form rejects a non-existing username and a wrong password.
+
+#### Registration Page
+1. Navigage to the "Registration" page from a desktop computer by using either the link at the bottom of the login page or the navbar item.
+2. Using both Firefox Developer Tools and different devices: Look at the registration on a desktop screen, a tablet screen, and a phone screen to verify that the navigation bar turns into a burger menu when navigating to the registration on a tablet or a phone screen.
+3. Click on the logo in the navigation bar and verify that it links back to the Login page.
+4. Verify that only the Registration and Login items are visible in the navbar to users who are not logged in.
+5. Click on each navbar item and the login link at the bottom of the screen and verify that it links to the correct page.
+6. Repeat steps 4 and 5 on phone and a tablet.
+7. Register a new user account and test if the form rejects invaldi input.
+
+#### Add Client Page
+1. Enter new client information and test if the form provides an error message in response to trying to submit the an incomplete form.
+2. Submit the form.
+
+#### Manage Clients Page
+1. Click the **Delete** button to test if the selected entry was deleted.
+2. Click the **Edit** button to test if the user is directed to the edit client information page.
+
+
+
+
+
 
 2. Jumbotron
    1. Click on link to Contact page to verify it links to the Contact page.
