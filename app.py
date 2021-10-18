@@ -135,15 +135,11 @@ def delete_clientInfo(clientInfo_id):
 def invoice():
     if request.method == "GET":
         clientInfos = mongo.db.clientInfo.find().sort("client_organization", 1)
-        if request.method == "GET":
-            rateTypes = mongo.db.rateType.find().sort("rate_type", 1)
-            if request.method == "GET":
-                interpretingAmounts = mongo.db.interpretingAmount.find().sort("interpreting_amount", 1)
-                if request.method == "GET":
-                    consultings =  mongo.db.consulting.find().sort("consulting", 1)
-                    if request.method == "GET":
-                        consultingAmounts = mongo.db.consultingAmount.find().sort("consulting_amount", 1)
-                        return render_template("invoice.html", clientInfos=clientInfos, rateTypes=rateTypes, interpretingAmounts=interpretingAmounts, consultings=consultings, consultingAmounts=consultingAmounts)
+        rateTypes = mongo.db.rateType.find().sort("rate_type", 1)
+        interpretingAmounts = mongo.db.interpretingAmount.find().sort("interpreting_amount", 1)
+        consultings =  mongo.db.consulting.find().sort("consulting", 1)
+        consultingAmounts = mongo.db.consultingAmount.find().sort("consulting_amount", 1)
+        return render_template("invoice.html", clientInfos=clientInfos, rateTypes=rateTypes, interpretingAmounts=interpretingAmounts, consultings=consultings, consultingAmounts=consultingAmounts)
 
 
 # credit: thank you to Joshua Ugba for guiding me in understanding how to access exactly the information I needed to access.
