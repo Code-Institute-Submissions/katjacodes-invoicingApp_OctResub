@@ -5,7 +5,7 @@
 [View website on Heroku](https://katjas-invoicing-app.herokuapp.com/)
 
 ## Testing
-The developer used **[W3C CSS Validation](https://jigsaw.w3.org/css-validator/)**, **[W3C Markup Validation](https://validator.w3.org/)**, **[JSHint](https://jshint.com/)**, and **[PEP8 online](http://pep8online.com/)** to check the validity of HTML and CSS code.
+The developer used **[W3C CSS Validation](https://jigsaw.w3.org/css-validator/)**, **[W3C Markup Validation](https://validator.w3.org/)**, **[JSHint](https://jshint.com/)**, and **[PEP8 online](http://pep8online.com/)** to check the validity of HTML, CSS, JavaScript, and Python code.
 
 ### Client stories testing:
 Due to the very specific nature of the application, there are two kinds of users for this application: existing ones and new ones. Seamless access for both groups was tested during the testing process.
