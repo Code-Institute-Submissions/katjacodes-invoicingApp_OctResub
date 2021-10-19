@@ -61,10 +61,10 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 return redirect(url_for(
-                "profile", username=session["user"]))
+                                        "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -113,7 +113,7 @@ def edit_clientInfo(clientInfo_id):
             "client_name": request.form.get("client_name"),
             "client_position": request.form.get("client_position"),
             "client_email": request.form.get("client_email"),
-            "category_name": request.form.get("category_name") 
+            "category_name": request.form.get("category_name")
         }
         mongo.db.clientInfo.update({"_id": ObjectId(clientInfo_id)}, submit)
         flash("Client Successfully Updated")
@@ -121,7 +121,8 @@ def edit_clientInfo(clientInfo_id):
 
     clientInfo = mongo.db.clientInfo.find_one({"_id": ObjectId(clientInfo_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("editClient.html", clientInfo=clientInfo, categories=categories)
+    return render_template("editClient.html", clientInfo=clientInfo,
+                           categories=categories)
 
 
 @app.route("/delete_clientInfo/<clientInfo_id>")
@@ -136,24 +137,30 @@ def invoice():
     if request.method == "GET":
         clientInfos = mongo.db.clientInfo.find().sort("client_organization", 1)
         rateTypes = list(mongo.db.rateType.find().sort("rate_type", 1))
-        interpretingAmounts = list(mongo.db.interpretingAmount.find().sort("interpreting_amount", 1))
-        consultings =  mongo.db.consulting.find().sort("consulting", 1)
-        consultingAmounts = mongo.db.consultingAmount.find().sort("consulting_amount", 1)
-        return render_template("invoice.html", clientInfos=clientInfos, rateTypes=rateTypes, 
-            interpretingAmounts=interpretingAmounts, consultings=consultings, consultingAmounts=consultingAmounts)
+        interpretingAmounts = list(mongo.db.interpretingAmount.find().sort(
+            "interpreting_amount", 1))
+        consultings = mongo.db.consulting.find().sort("consulting", 1)
+        consultingAmounts = mongo.db.consultingAmount.find().sort(
+            "consulting_amount", 1)
+        return render_template("invoice.html", clientInfos=clientInfos,
+                               rateTypes=rateTypes,
+                               interpretingAmounts=interpretingAmounts,
+                               consultings=consultings,
+                               consultingAmounts=consultingAmounts)
 
 
 # credit: thank you to Joshua Ugba for guiding me in understanding how to access exactly the information I needed to access.
 @app.route("/api/invoice", methods=["GET", "POST"])
 def invoice_api():
     if request.method == "GET":
-        clientInfos = list(mongo.db.clientInfo.find().sort("client_organization", 1))
+        clientInfos = list(mongo.db.clientInfo.find().sort(
+            "client_organization", 1))
         for clientInfo in clientInfos:
             clientInfo['_id'] = str(clientInfo['_id'])
         print(clientInfos)
         return jsonify(clientInfos)
 
-       
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
