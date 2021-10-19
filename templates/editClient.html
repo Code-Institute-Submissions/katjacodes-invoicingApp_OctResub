@@ -11,8 +11,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-building prefix white-text"></i>
-                    <input id="client_organization" class="white-text" name="client_organization" minlength="4" maxlength="50" 
-                        value="{{ clientInfo.client_organization }}" type="text" class="validate" required>
+                    <input id="client_organization" class="white-text validate" name="client_organization" minlength="4" maxlength="50" 
+                        value="{{ clientInfo.client_organization }}" type="text" required>
                     <label for="client_organization" class="white-text">Organization</label>
                 </div>
             </div>
@@ -20,8 +20,8 @@
             <div class="row">
                 <div class="input-field col s12t">
                     <i class="fas fa-user-circle prefix white-text"></i>
-                    <input id="client_name" class="white-text" name="client_name" minlength="5" maxlength="50" 
-                    value="{{ clientInfo.client_name }}" type="text" class="validate" required>
+                    <input id="client_name" class="white-text validate" name="client_name" minlength="5" maxlength="50" 
+                    value="{{ clientInfo.client_name }}" type="text" required>
                     <label for="client_name" class="white-text">Name</label>
                 </div>
             </div>
@@ -29,8 +29,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-briefcase prefix white-text"></i>
-                    <input id="client_position" class="white-text" name="client_position" minlength="5" maxlength="50" 
-                    value="{{ clientInfo.client_position }}" type="text" class="validate" required>
+                    <input id="client_position" class="white-text validate" name="client_position" minlength="5" maxlength="50" 
+                    value="{{ clientInfo.client_position }}" type="text" required>
                     <label for="client_position" class="white-text">Position</label>
                 </div>
             </div>
@@ -38,8 +38,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-at prefix white-text"></i>
-                    <input id="client_email" class="white-text" name="client_email" minlength="5" maxlength="50" 
-                    value="{{ clientInfo.client_email }}" type="email" class="validate" required>
+                    <input id="client_email" class="white-text validate" name="client_email" minlength="5" maxlength="50" 
+                    value="{{ clientInfo.client_email }}" type="email" required>
                     <label for="client_email" class="white-text">Email</label>
                 </div>
             </div>
@@ -62,14 +62,12 @@
                     <div class="flex-parent">
                         <!-- submit button -->
                         <button class="waves-effect amber lighten-2 black-text btn" aria-label="Submit" style="margin-right: 3em;">
-                            <a><i type="submit" class="fas fa-paper-plane black-text"></i>Submit</a>
+                            Submit<i type="submit" class="fas fa-paper-plane black-text"></i>
                         </button>
                         <!-- cancel button -->
-                        <!-- <button class="col s12 btn-large cyan lighten-4 black-text" type="submit">Submit
-                            <i class="fas fa-paper-plane black-text"></i> -->
-                        <button class="waves-effect cyan lighten-4 black-text btn" aria-label="Cancel">
-                            <a href="{{ url_for('get_clientInfo') }}"></a><i class="fas fa-times-circle right"></i>Cancel</a>
-                        </button>
+                        <a href="{{ url_for('get_clientInfo') }}" class="waves-effect cyan lighten-4 black-text btn" aria-label="Cancel">
+                            Cancel <i class="fas fa-times-circle right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
