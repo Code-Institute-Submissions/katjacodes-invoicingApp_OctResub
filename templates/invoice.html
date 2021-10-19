@@ -27,7 +27,7 @@
                 <!-- client selection -->
                 <div class="row">
                     <div class="" action="/" method="post">
-                        <select onChange="changeRate()" id="client_organization" name="client_organization" aria-label="Select client organization">
+                        <select onChange="changeRate()" id="client_organization" name="client_organization" aria-label="Select client organization" required>
                             <option value="" disabled selected>Choose client</option>
                             {% for clientInfo in clientInfos %}
                                 <option value="{{ clientInfo.client_email }}">{{ clientInfo.client_organization }}</option>
@@ -120,7 +120,7 @@
                     <tr>
                         <td>
                             <div class="input-field col s12">
-                                <select id="consulting" name="consulting" class="validate" method="GET">
+                                <select id="consulting" name="consulting" class="validate" method="GET" required>
                                     <option value="" disabled selected>Billable consulting?</option>
                                     {% for consulting in consultings %}
                                         <option value="{{ consulting.consulting }}">{{ consulting.consulting }}</option>
@@ -131,7 +131,7 @@
                         </td>
                         <td>
                             <div class="input-field col s12">
-                                  <select onchange="add_number()" id="consulting_amount" name="consulting_amount" class="validate" method="GET">
+                                  <select onchange="add_number()" id="consulting_amount" name="consulting_amount" class="validate" method="GET" required>
                                       <option value="" disabled selected>Choose amount</option>
                                       {% for consultingAmount in consultingAmounts %}
                                           <option value="{{ consultingAmount.consulting_amount }}">{{ consultingAmount.consulting_amount }}</option>
