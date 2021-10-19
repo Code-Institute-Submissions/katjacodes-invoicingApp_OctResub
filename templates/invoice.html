@@ -89,7 +89,31 @@
                                   </select>
                                   <label for="interpreting_amount" class="black-text">Amount</label>
                             </div>
-                          </td>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="input-field col s12">
+                                <select id="rate_type2" name="rate_type" class="validate" method="GET" required>
+                                    <option value="" disabled selected>Choose rate type</option>
+                                    {% for rateType in rateTypes %}
+                                        <option value="{{ rateType.rate_type }}">{{ rateType.rate_type }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="rate_type" class="black-text">Interpreting</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field col s12">
+                                  <select onchange="add_number()" id="interpreting_amount2" name="interpreting_amount" class="validate" method="GET" required>
+                                      <option value="" disabled selected>Choose amount</option>
+                                      {% for interpretingAmount in interpretingAmounts %}
+                                          <option value="{{ interpretingAmount.interpreting_amount }}">{{ interpretingAmount.interpreting_amount }}</option>
+                                      {% endfor %}
+                                  </select>
+                                  <label for="interpreting_amount" class="black-text">Amount</label>
+                            </div>
                         </td>
                     </tr>
 
