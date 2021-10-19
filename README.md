@@ -92,12 +92,10 @@ The profile page greets the user with his **username**. It is displayed upon log
 - [Registration Page](register.html) - Allows new users to open an account and leads existing users to the login page throughte embedded link or by clicking on the Log In item in the navbar.
 - [Login Page](login.html) - Allows existing users to log in to their account and leads new users to the registration page throughte embedded link or by clicking on the Log In item in the navbar.
 - [Add Client Page](addClient.html) - Displayed only to logged in users. Provides interface to enter and save new client information.
-- [Manage Clients Page](clientInfo.html) - Displayed only to logged in users. Displays the organization name of all saved client information entries and allows uers to view the complete entries, delete them, and access the edit page. 
+- [Manage Clients Page](clientInfo.html) - Displayed only to logged in users. Displays the organization names of all saved client information entries *in alphabetical order* and allows uers to view the complete entries, delete them, and access the edit page. 
 - [Edit Client Page](editClient.html) - Displayed only to logged in users. Allows users to modify every line of the selected client information entry and either save or discard the changes. Automatically displays the current date in standard U.S. format at the top of the page.
 - [New Invoice Page](invoice.html) - Displayed only to logged in users. Allows users to create an invoice by using the dropdown menus and textfields that are part of the form and converting the completed form into ready-to-share pdf document at the end.
 - [Profile Page](profile.html) - Displayed only to logged in users. Provides quick explanations of and direct links to the different functionalities of the application.
-- [Events Page in English](events.html) and [Events Page in Spanish](events_es.html) - Provides information about the different volunteer roles available during the Fire and Earthquake Safety Expo at a glance followed by a **sign-up form**.
-- [Gallery Page in English](gllery.html) and [Gallery Page in Spanish](gallery_es.html) - Will display images from the expo after the event with the **option for visitors to enlarge them on cklick**.
 
 ### Features to Implement in the Future
 - POST request-based functionality for users to submit additional personal information on the profile page, which will then be added to the invoice header via GET request.
