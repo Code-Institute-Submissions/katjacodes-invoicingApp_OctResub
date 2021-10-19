@@ -96,9 +96,10 @@ function pdfRocket(html, savePdf) {
   
        var url = "https://api.html2pdfrocket.com/pdf";
        var apiKey = "dc67c5f0-34b7-48c2-be1d-ccee3b855f7d";
+       var UseGrayscale = true;
  
        // Additional parameters can be added here
-       var data = "apikey=" + apiKey + "&value=" + encodeURIComponent(html);
+       var data = "apikey=" + apiKey + "&value=" + encodeURIComponent(html) + UseGrayscale;
   
        self.req.onload = function(event) {
               self.reader = new FileReader();
