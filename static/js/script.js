@@ -99,7 +99,7 @@ function pdfRocket(html, savePdf) {
        var UseGrayscale = true;
  
        // Additional parameters can be added here
-       var data = "apikey=" + apiKey + "&value=" + encodeURIComponent(html) + UseGrayscale;
+       var data = "apikey=" + apiKey + "&value=" + encodeURIComponent(html) + "UseGrayscale=" + true;
   
        self.req.onload = function(event) {
               self.reader = new FileReader();
