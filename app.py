@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 
 @app.route("/get_clientInfo")
 def get_clientInfo():
-    clientInfo = list(mongo.db.clientInfo.find())
+    clientInfo = list(mongo.db.clientInfo.find().sort("client_organization", 1))
     return render_template("clientInfo.html", clientInfo=clientInfo)
 
 
