@@ -202,5 +202,5 @@ You will need to create an HTML to PDF Rocket account to obtain an API key for t
 
 
 ### Acknowledgements
-- The Code Institute Slack Community was really helpful providing pointers when I got stuck and unable to see the forest for the trees.
-- Joshua Ugba took the time to explain to me in-depth how to integrate JavaScript and Python. I owe a better understanding of JSON files to him. 
+- The Code Institute Slack Community and my session with a tutor was really really helped me out by providing pointers when I got stuck and unable to see the forest for the trees.
+- Joshua Ugba took the time to explain to me in depth how to integrate JavaScript and Python. I owe a better understanding of JSON files to him. 
