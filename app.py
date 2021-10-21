@@ -1,4 +1,6 @@
-# credit: code taken from https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching and edited to fit project needs
+# credit: code taken from
+# https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching
+# and edited to fit project needs
 
 import os
 from flask import (
@@ -9,7 +11,6 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
-
 
 app = Flask(__name__)
 
@@ -23,7 +24,8 @@ mongo = PyMongo(app)
 
 @app.route("/get_clientInfo")
 def get_clientInfo():
-    clientInfo = list(mongo.db.clientInfo.find().sort("client_organization", 1))
+    clientInfo = list(mongo.db.clientInfo.find().sort("client_organization",
+                      1))
     return render_template("clientInfo.html", clientInfo=clientInfo)
 
 
@@ -149,7 +151,8 @@ def invoice():
                                consultingAmounts=consultingAmounts)
 
 
-# credit: thank you to Joshua Ugba for guiding me in understanding how to access exactly the information I needed to access.
+# credit: thank you to Joshua Ugba for guiding me in understanding how to
+# access exactly the information I needed to access.
 @app.route("/api/invoice", methods=["GET", "POST"])
 def invoice_api():
     if request.method == "GET":
@@ -164,4 +167,5 @@ def invoice_api():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            DEBUG=('DEBUGGING' in os.environ)
+            )
