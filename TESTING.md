@@ -5,7 +5,8 @@
 [View website on Heroku](https://katjas-invoicing-app.herokuapp.com/)
 
 ## Testing
-The developer used **[W3C CSS Validation](https://jigsaw.w3.org/css-validator/)**, **[W3C Markup Validation](https://validator.w3.org/)**, **[JSHint](https://jshint.com/)**, and **[PEP8 online](http://pep8online.com/)** to check the validity of HTML, CSS, JavaScript, and Python code.
+To check the validity of HTML, CSS, JavaScript, and Python code, I used **[W3C CSS Validation](https://jigsaw.w3.org/css-validator/)**, **[W3C Markup Validation](https://validator.w3.org/)**, **[JSHint](https://jshint.com/)**, and **[PEP8 online](http://pep8online.com/)**.
+
 
 ### Client stories testing:
 Due to the very specific nature of the application, there are two kinds of users for this application: existing ones and new ones. Seamless access for both groups was tested during the testing process.
@@ -24,7 +25,6 @@ Due to the very specific nature of the application, there are two kinds of users
 
 
 ### Manual (logical) testing of all elements and functionality on every page.
-
 #### Login Page
 1. Navigage to the "Login" page from a desktop computer.
 2. Using both Firefox Developer Tools and different devices: Look at the login on a desktop screen, a tablet screen, and a phone screen to verify that the navigation bar turns into a burger menu when navigating to the login on a tablet or a phone screen.
@@ -51,57 +51,61 @@ Due to the very specific nature of the application, there are two kinds of users
 1. Click the **Delete** button to test if the selected entry was deleted.
 2. Click the **Edit** button to test if the user is directed to the edit client information page.
 
+#### Edit Client Page
+1. Enter new client information and test if the form provides an error message in response to trying to submit the an incomplete form.
+2. Submit the form.
+3. Cancel the editing process and test if the user gets sent back to the manage clients page.
+
+#### Invoice Page
+1. Select cliet orgnization and test if the remaining client field populate automatically.
+2. Fill out work details and test if the text input fields are functional
+3. Test out the dropdown menaus for interpreting jobs, coordination/consulting, and rates and test if they populate correctly, including an empty option, and if the total amount gets added correctly.
+
+#### Profile Page
+1. Click the links to test if the link to the correct pages. 
 
 
+## Bugs Discovered
 
 
+### JavaScript Date Shown in the Wrong Format
+- Using the JavaScript ``Date()`` constructor, the date at the to of the invoice template did not appear in the desired format.
 
-2. Jumbotron
-   1. Click on link to Contact page to verify it links to the Contact page.
-   2. Click on the  Spotify logo to verify it links to the musical's Spotify page.
+- Using a customized function that including a location setting allowed me to set the date to standard U.S. format, i.e., the format of the region where the app will be used:
 
-### About page
-1. Navigation bar:
-   1. Repeat verification steps for the navigation bar on the home page.
+<figure align="left">
+    <img src="static/img/testing/jsDate.png" alt="JavaScript code of a customized date function used to display the current date in U.S. standard format"/>
+    <figcaption>JavaScript code of a customized date function used to display the current date in U.S. standard format</figcaption>
+</figure>
 
-2.  Page content
-    1. Reduce and expand width of window to verify that the text behaves the way expected
-    2. Using both Firefox Developer Tools and different devices: Look at the About on a desktop screen, a tablet screen, and a phone screen (both in portrait and landscape orientation) to verify that
-       - The text arrangement looks good on all device widths.
-       - The margins adjust depending on the device width for optimal use of space.
-    3. Click on the link to the musical's Spotify profile embedded in the text to verify it links to the correct page.
 
-### Cast + team page & individual profile pages
-1. Navigation bar
-   1. Repeat verification steps for the navigation bar on the home page.
+### List of Clients Disappared
 
-2. Page content
-   1. Click on each profile image to verify it links to the correct profile.
-   2. Using both Firefox Developer Tools and different devices: Look at the About on a desktop screen, a tablet screen, and a phone screen (both in portrait and landscape orientation) to verify that the images rearrange with increasing/decreasing screen width. _During testing, the imgages did not rearrange. Researching the reason for this, I found out that all of them need to be wrapped into on single row to be fully responsive._
+- At one point, the list of clients on the manage clients page completely disappeared.
 
-3. Individual profile pages
-   1. Navigation bar:
-      1. Repeat verification steps for the navigation bar on the home page.
+- Using Google Developer Tools, I discovered the following:
 
-   2. Using both Firefox Developer Tools and different devices: Look at the About on a desktop screen, a tablet screen, and a phone screen (both in portrait and landscape orientation) to verify that
-      - The text arrangement looks good on all device widths.
-      -  The size of the profile image increase on tables and desktop screens.
-      -  The styling of the quotes changes with increasing/decreasing screen width.
+ ```list``` in ```clientInfo``` had been missing. Below the fixed code:\
+```@app.route("/get_clientInfo")```\
+```def get_clientInfo():```\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```clientInfo = list(mongo.db.clientInfo.find())```\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```return render_template("clientInfo.html", clientInfo=clientInfo)```\
 
-### Contact page
-1. Navigation bar:
-   1. Repeat verification steps for the navigation bar on the home page.
 
-2. Page content
-   1. Click on the  Facebook and Instagram logos to verify it links to the musical's social media presences. 
-   2. Using both Firefox Developer Tools and different devices: Look at the About on a desktop screen, a tablet screen, and a phone screen (both in portrait and landscape orientation) to verify that
-      - The text arrangement looks good on all device widths.
-      - The margins and width text input fields adjust depending on the device width for optimal use of space.
-   3. NOTE: The form is not functional while the website it deployed on GitHub. It will be once the client deploys it using Squarespace hosting.
+### Failure to Display Multiple Dropdown Menus on the Same Page
+- Initially, I did not magage to display several different dropdown menus on the invoice page. This is the code I was usinng:
 
-###  Footer 
-1. Using both Firefox Developer Tools and different devices: Look at the About on a desktop screen, a tablet screen, and a phone screen (both in portrait and landscape orientation) to verify that the footer is sticky on all pages and across devices. 
-2. Click on the Letters and Bytes link to verify it leads to the developer's website  on all pages.
+<figure align="left">
+    <img src="static/img/testing/severalDropdowns.png" alt="Python code that did not allow me to display more than one dropdown menu on the invoice page"/>
+    <figcaption>Python code that did not allow me to display more than one dropdown menu on the invoice page</figcaption>
+</figure>
 
-## Further testing: 
-1. Asked friends, family members, and other Code Institute students to look at the site on their devices and report any issues they find. 
+
+### Buttons on Edit Client Page Not Centered on iPad
+- During initial testing of responsiveness, the buttons on the editc client page were not centered on iPad screens.
+- I solved the problem by writing my own CSS code instead of using the Materialize styling.
+
+
+### JavaScript Function at the Bottom of Invoice Page not Adding Amounts
+- Initially, the field for the total remained blank even after selecting amount from the dropdown menus.
+- Through Google research I realized that I needed to save the rates in the Int64 format, not as strings, in MongoDB.
