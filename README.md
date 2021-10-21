@@ -1,7 +1,7 @@
 # Interpreter Invoicing App
 
 <div align="center">
-    <img src="assets/images/mockup.png" alt="Mockup of how home page looks on diffferent screen sizes"/>
+    <img src="static/img/mockup.png" alt="Mockup of how home page looks on diffferent screen sizes"/>
 </div>
 <br>
 
