@@ -37,13 +37,13 @@ Currently, the general goals of the application are:
 2. As an existing user of the application, I want to be able to manage my client information and easily create ready-to-share invoices
 
 ### Wireframe Mockups: 
-- [Registration Page](assets/img/wireframes/registration.png)
-- [Login age](assets/img/wireframes/login.png)
-- [Add Client Page](assets/img/wireframes/addClinet.png)
-- [All Clients Page](assets/img/wireframes/clientInfo.png)
-- [Edit Client Page](assets/img/wireframes/editClient.png)
-- [New Invoice Page](assets/img/wireframes/invoice.png)
-- [Profile Page](assets/img/wireframes/profile.png)
+- [Registration Page](static/img/wireframes/registration.png)
+- [Login Page](static/img/wireframes/login.png)
+- [Add Client Page](static/img/wireframes/addClinet.png)
+- [All Clients Page](static/img/wireframes/clientInfo.png)
+- [Edit Client Page](staticimg/wireframes/editClient.png)
+- [New Invoice Page](static/img/wireframes/invoice.png)
+- [Profile Page](static/img/wireframes/profile.png)
 
 
 ## Features
