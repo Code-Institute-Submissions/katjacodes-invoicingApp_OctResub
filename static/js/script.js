@@ -1,10 +1,8 @@
 
 /* credit: code taken from https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching*/
-
 /*
     jQuery for MaterializeCSS initialization
 */
-
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
     $('select').formSelect();
@@ -42,11 +40,30 @@ function validateMaterializeSelect() {
 }
 });
 
+/* credit: code for scroll-to-top button taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top and edited slightly to fit project needs */
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction();};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
 /* 
     INVOICE PAGE 
 */
-
 /* credit: code taken from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tolocaledatestring and edited to fit project needs */
              function myFunction() {
                 const options = {year: 'numeric', month: 'long', day: 'numeric' };
